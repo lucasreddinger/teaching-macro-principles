@@ -2,7 +2,7 @@
 
 These are materials I have developed over three semesters of teaching my macro principles course.
 
-All materials copyright 2021&ndash;2022 J. L. Reddinger <jlr@lucasreddinger.com> and licensed as [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+All materials copyright 2021&ndash;2022 J. L. Reddinger &lt;jlr@lucasreddinger.com&gt; and licensed as [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 Virtually all of my lectures and some of my assignments use recent economic data. For example:
 
