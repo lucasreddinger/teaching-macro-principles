@@ -1,0 +1,157 @@
+\documentclass[
+    letterpaper,paper=portrait,fleqn,
+    DIV=16,fontsize=12pt,twoside=semi,
+    parskip=full-,
+    headings=standardclasses]
+{scrartcl}
+
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+\ohead{\pagemark}
+
+\usepackage{mathtools}
+\usepackage[fullfamily,footnotefigures,swash,lf,mathtabular]{MinionPro}
+\usepackage[eqno,enum,lineno]{tabfigures}
+
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{dcolumn}
+\usepackage{tikz}
+
+% Reduce vertical spacing around headings
+\RedeclareSectionCommand[
+  runin=false,
+  beforeskip=0.5\baselineskip
+]{section}
+\RedeclareSectionCommand[
+  beforeskip=0pt
+]{paragraph}
+% Allow display-mode math to break across pages
+\allowdisplaybreaks[1]
+% Set RaggedRight paragraph indent
+\setlength{\RaggedRightParindent}{\parindent}
+% Create additional column types
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}p{1in}}
+% Bold enumerate numbering
+\setlist[enumerate,1]{label=\bfseries\arabic*.}
+%\setlist{itemsep=\baselineskip,parsep=0\baselineskip}
+% Sections counted in alphabet and formatted as ``Parts''
+\renewcommand*\thesection{\Alph{section}}
+\renewcommand\sectionformat{Part~\thesection:\enskip}
+
+\begin{document}
+\RaggedRight
+\thispagestyle{plain}
+
+ECO 120-04 \\
+Lucas Reddinger \\
+Friday 16 September 2022 \hfill Your full name: \underline{\hspace{3.25in}}
+
+\vspace{0.7\baselineskip}
+\textbf{\LARGE Assignment 2: Production possibility frontier}
+\vspace{0.3\baselineskip}
+
+You may work with other students on this assignment. However, most of the work here should be your own, so that you may obtain valuable feedback on your personal progress.
+
+\emph{Due Friday 23 September.} Please submit hardcopy at the beginning of class (11:00 a.m.), or if you prefer, under the door of Wimberly Hall 339C by 10:50 a.m.
+
+\section{An economy of kale and dental floss}
+
+Your small country produces two goods, kale and dental floss.
+
+When production is efficient, you can produce the following combinations of kale and dental floss:
+
+\begin{tabular}{l>{\raggedleft\arraybackslash}p{0.9in}>{\raggedleft\arraybackslash}p{1.3in}}
+\toprule
+Point & Kale (tons) & Dental floss (km) \\
+\midrule
+$A$ &   0 & 1,000 \\
+$B$ & 200 &   900 \\
+$C$ & 400 &   700 \\
+$D$ & 600 &   400 \\
+$E$ & 800 &     0 \\
+\bottomrule
+\end{tabular}
+
+These points are connected with straight line segments; altogether these comprise the production possibility frontier.
+
+\clearpage
+
+\begin{enumerate}
+
+\item Please graph the production possibility frontier (PPF), with kale on the horizontal axis and dental floss on the vertical axis. Use a scale of 0 to 1,200 on the horizontal axis and 0 to 1,000 on the vertical axis. Properly label the graph by labelling both the axes and the curve.
+
+\vspace{12pt}
+\begin{center}
+\begin{tikzpicture}[x=4mm, y=4mm]
+\clip(3,3) rectangle (42,27);
+\draw[step=4mm, very thin, black!20!white] (0,0) grid (60,120);
+\draw[step=20mm, thick, black!40!white] (0,0) grid (60,120);
+\end{tikzpicture}
+\end{center}
+\vspace{24pt}
+
+\item The PPF you drew above should consist of four line segments---$\overline{AB}$, $\overline{BC}$, $\overline{CD}$, and $\overline{DE}$. For each segment, please calculate the cost of one ton of kale. Ensure that you specify the units of the cost. Please show your work. If you use a formula, please write it clearly upon its first use.
+
+\clearpage
+
+\item Now for each segment, please calculate the cost of one kilometer of dental floss. Again, please show your work and ensure that you specify the units of the cost.
+
+\vfill
+
+\item What is the cost of the 500th ton of kale? Please specify units.
+
+\vspace{5\baselineskip}
+
+\item What is the cost of the 921st km of dental floss? Please specify units.
+
+\vspace{5\baselineskip}
+
+\end{enumerate}
+
+\clearpage
+
+\section{Technological progress}
+
+New irrigation technology allows you to produce more kale. Now efficient production is given by the following table:
+
+\begin{tabular}{l>{\raggedleft\arraybackslash}p{0.9in}>{\raggedleft\arraybackslash}p{1.3in}}
+\toprule
+Point & Kale (tons) & Dental floss (km) \\
+\midrule
+$A'$ &     0 & 1,000 \\
+$B'$ &   300 &   900 \\
+$C'$ &   600 &   700 \\
+$D'$ &   900 &   400 \\
+$E'$ & 1,200 &     0 \\
+\bottomrule
+\end{tabular}
+
+Once again, these points are connected with straight line segments, comprising the new PPF.
+
+\begin{enumerate}
+
+\item Please draw this new PPF on your original graph, labeled as PPF'.
+
+\item With your new irrigation technology, what is the cost of the 500th ton of kale? Please show your work and specify units.
+
+\vfill
+
+Did the cost increase, decrease, or remain the same compared to the cost with the old technology?
+
+\vspace{4\baselineskip}
+
+\item With your new irrigation technology, what is the cost of the 921st km of dental floss? Please show your work and specify units.
+
+\vfill
+
+Did the cost increase, decrease, or remain the same compared to the cost with the old technology?
+
+\vspace{4\baselineskip}
+
+\end{enumerate}
+
+\end{document}

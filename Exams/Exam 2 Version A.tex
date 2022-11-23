@@ -1,0 +1,408 @@
+\documentclass[
+    letterpaper,paper=portrait,fleqn,
+    DIV=16,fontsize=12pt,twoside=semi,
+    parskip=full-,
+    headings=standardclasses]
+{scrartcl}
+
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+\ohead{\pagemark}
+
+\usepackage{mathtools}
+\usepackage[fullfamily,footnotefigures,swash,lf,mathtabular]{MinionPro}
+\usepackage[eqno,enum,lineno]{tabfigures}
+
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{dcolumn}
+\usepackage{tikz,pgfplots,contour}
+\usepackage{multicol}
+
+\usetikzlibrary{patterns}
+\usetikzlibrary{arrows,arrows.meta}
+
+% Increase contour width
+\contourlength{0.15em}
+% Reduce vertical spacing around headings
+\RedeclareSectionCommand[
+  runin=false,
+  beforeskip=0.5\baselineskip
+]{section}
+\RedeclareSectionCommand[
+  beforeskip=0pt
+]{paragraph}
+% Allow display-mode math to break across pages
+\allowdisplaybreaks[1]
+% Set RaggedRight paragraph indent
+\setlength{\RaggedRightParindent}{\parindent}
+% Create additional column types
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}p{1in}}
+% Bold enumerate numbering
+\setlist[enumerate,1]{label=\bfseries\arabic*.}
+\setlist[enumerate,2]{label=\bfseries(\alph*),nosep}
+% Sections counted in alphabet and formatted as ``Parts''
+\renewcommand*\thesection{\Alph{section}}
+\renewcommand\sectionformat{Part~\thesection:\enskip}
+
+\begin{document}
+\RaggedRight
+\thispagestyle{plain}
+
+ECO 120-04 \\
+Lucas Reddinger \\
+Friday 18 November 2022 \hfill Your full name: \underline{\hspace{3.25in}}
+
+\vspace{0.7\baselineskip}
+\textbf{\LARGE Exam 2}
+\vspace{0.3\baselineskip}
+
+Please label proper units as appropriate.
+
+Show your work to maximize partial credit.
+
+\clearpage
+
+\section{A two-good economy of kale and dental floss}
+
+Consider an economy that produces two goods---kale and dental floss. The production possibility frontier of the economy is shown below.
+
+\begin{tikzpicture}[x=4mm, y=4mm, >=latex]
+\begin{axis}[
+  width={0.6\linewidth},
+  grid=both,
+  grid style={line width=.1pt, draw=black!40!white},
+  xmin=0,
+  ymin=0,
+  xmax=500,
+  ymax=1200,
+  xtick distance=100,
+  ytick distance=100,
+  xlabel={kale (tons)},
+  ylabel={dental floss (km)},
+  xticklabel style={yshift=-2pt},
+  yticklabel style={xshift=-2pt},
+  xlabel style={yshift=-4pt},
+  ylabel style={yshift=6pt}
+]
+
+\addplot+ [
+  mark=*, thick,
+  visualization depends on=\thisrow{xshift} \as \xshift,
+  point meta=explicit symbolic,
+  nodes near coords,
+  every node near coord/.style={above right, xshift=\xshift}
+] table [meta=label,meta index=xshift] {
+x y label xshift
+    0   1000 \contour{white}{$A$} -5
+    100  900 \contour{white}{$B$}  0
+    200  700 \contour{white}{$C$}  0
+    300  400 \contour{white}{$D$}  0
+    400    0 \contour{white}{$E$}  0
+};
+
+\draw (axis cs:  350, 225) node[above right,blue]{\contour{white}{\textbf{\large PPF}}};
+\node[label={225:{\contour{white}{$F$}}},circle,fill,inner sep=0pt,minimum size=2mm] at (axis cs:200,500) {};
+\end{axis}
+\end{tikzpicture}
+
+\begin{enumerate}
+
+\item What is the cost of producing $C$ instead of $A$?
+
+\vfill
+
+\item What is the benefit of producing $C$ instead of $A$?
+
+\vfill
+
+\item What is the cost of producing $D$ instead of $C$?
+
+\vfill
+
+\item What is the benefit of producing $D$ instead of $C$?
+
+\vfill
+
+\vspace{-2\baselineskip}
+
+\clearpage
+
+\item At $F$, what is the cost of producing an additional 200 km of dental floss?
+
+\vfill
+
+\item At $F$, what is the cost of producing an additional 400 km of dental floss?
+
+\vfill
+
+\item At $F$, what is the cost of producing an additional 100 tons of kale?
+
+\vfill
+
+\item At $F$, what is the cost of producing an additional 200 tons of kale?
+
+\vfill
+
+\item Is production efficient at $B$?
+
+\vfill
+
+\item Is production efficient at $F$?
+
+\vfill
+
+\item Is the cost of kale increasing, decreasing, or constant?
+
+\vfill
+
+\item Is the cost of dental floss increasing, decreasing, or constant?
+
+\vfill
+
+\vspace{-2\baselineskip}
+
+\end{enumerate}
+
+\clearpage
+
+Suppose that in 2020, the economy produces $B$. In 2021, the economy produces $D$.
+
+\begin{tabular}{ccc}
+\toprule
+Year & Price of kale (\$ per ton) & Price of dental floss (\$ per km) \\
+\midrule
+2020 & 2 &  8 \\
+2021 & 3 & 10 \\
+\bottomrule
+\end{tabular}
+
+Please use 2020 as the base year for any real GDP or CPI calculations.
+
+\begin{enumerate}[resume]
+
+\item What was the nominal GDP of the two-good economy in 2020?
+
+\vfill
+
+\item What was the nominal GDP of the two-good economy in 2021?
+
+\vfill
+
+\item What was the percent change in nominal GDP from 2020 to 2021?
+
+\vfill
+
+\item What was the real GDP of the two-good economy in 2020?
+
+\vfill
+
+\item What was the real GDP of the two-good economy in 2021?
+
+\vfill
+
+\item What was the percent change in real GDP from 2020 to 2021?
+
+\vfill
+
+\vspace{-2\baselineskip}
+
+\clearpage
+
+\item Based on your GDP calculations, what was the inflation rate from 2020 to 2021?
+
+\vfill
+
+\item What was the rate of inflation in the price of kale from 2020 to 2021?
+
+\vfill
+
+\item What was the rate of inflation in the price of dental floss from 2020 to 2021?
+
+\vfill
+
+\item Calculate a consumer price index for 2020.
+
+\vfill
+
+\item Calculate a consumer price index for 2021.
+
+\vfill
+
+\item Calculate the percentage change in this CPI from 2020 to 2021.
+
+\vfill
+
+\item You calculated economy-wide inflation using GDP and again using CPI. How much higher is inflation calculated from CPI than inflation calculated from GDP?
+
+\vfill
+
+\vspace{-2\baselineskip}
+
+\clearpage
+
+\end{enumerate}
+
+\section{The La Crosse-Onalaska, WI-MN metropolitan statistical area}
+
+Consider these actual labor force data from the Bureau of Labor Statistics:
+
+\begin{tabular}{l*4{d{6.0}}}
+\toprule
+\multicolumn{5}{c}{Labor force data for the La Crosse-Onalaska, WI-MN MSA} \\
+\midrule
+& \multicolumn{4}{c}{Number of persons} \\
+\cmidrule{2-5}
+& \multicolumn{1}{c}{Aug.~2019} & \multicolumn{1}{c}{Aug.~2020} & \multicolumn{1}{c}{Aug.~2021} & \multicolumn{1}{c}{Aug.~2022} \\
+\midrule
+Employment & 74064 & 72257 & 74949 & 74048 \\
+Unemployment & 2147 & 3779 & 2192 & 1904 \\
+\bottomrule
+\end{tabular}
+
+\begin{enumerate}[resume]
+
+\item What was the unemployment rate in Aug.~2019?
+
+\vfill
+
+\item What was the unemployment rate in Aug.~2020?
+
+\vfill
+
+\item What was the unemployment rate in Aug.~2021?
+
+\vfill
+
+\item By how many percentage points did the unemployment rate change from Aug.~2019 to Aug.~2020?
+
+\vfill
+
+\item By how many percentage points did the unemployment rate change from Aug.~2020 to Aug.~2021?
+
+\vfill
+
+\item Do you think more jobs opened in the year prior to Aug.~2020 or the year following Aug.~2020?
+
+\vfill
+
+\end{enumerate}
+
+\vspace{-2\baselineskip}
+\clearpage
+
+\section{Multiple choice}
+
+Please choose the best response.
+
+\begin{enumerate}[resume]
+
+\item In a two-good economy that produces $x$ and $y$, production is efficient if and only if some positive amount of good $x$ must be forgone to produce more good $y$.
+\vspace{-8pt}
+\begin{enumerate}
+\item True
+\item False
+\end{enumerate}
+
+\item If the price of an asset is expected to rise in the future:
+\vspace{-8pt}
+\begin{enumerate}
+\item asset owners will be more willing to sell it now.
+\item it will be more in demand today.
+\item the price of the asset will fall today.
+\item the market is irrational.
+\end{enumerate}
+
+\item A reason that does NOT explain why frictional unemployment exists is:
+\vspace{-8pt}
+\begin{enumerate}
+\item that new jobs are continually being created.
+\item that some old jobs are always being destroyed.
+\item that new workers are always entering the labor market.
+\item the minimum wage.
+\end{enumerate}
+
+\item When the unemployment rate is very low, most of it tends to be:
+\vspace{-8pt}
+\begin{enumerate}
+\item cyclical.
+\item frictional.
+\item seasonal.
+\item structural.
+\end{enumerate}
+
+\item When the demand for labor is falling and employers have committed to high wages, \rule{1cm}{0.15mm} unemployment will result.
+\vspace{-8pt}
+\begin{enumerate}
+\item frictional
+\item cyclical
+\item permanent
+\item structural
+\end{enumerate}
+
+\item Firms pay an efficiency wage because:
+\vspace{-8pt}
+\begin{enumerate}
+\item it reduces the risk of losing the best workers.
+\item it is required by law.
+\item they don't have to offer health insurance if they pay efficiency wages.
+\item it reduces the employee's income tax liability.
+\end{enumerate}
+
+\end{enumerate}
+
+\begin{tikzpicture}[scale=0.5]
+\draw[thick,<->] (0,10) node[below left]{wage $w$}--(0,0)--(10,0) node[below right]{$L$ (hours of labor)};
+\draw[thick,red] (0,1)--(10,9) node[below]{$S$};
+\draw[thick,blue] (0,9)--(9,0) node[above]{$D$};
+\draw[dashed] (0,8) node[left]{$w_3$} --++ (10,0);
+\draw[dashed] (0,4.5) node[left]{$w_2$} --++ (10,0);
+\draw[dashed] (0,2) node[left]{$w_1$} --++ (10,0);
+\draw[dashed] (1,0) node[below]{$L_1$} --++ (0,10);
+\draw[dashed] (4.45,0) node[below]{$L_2$} --++ (0,10);
+\draw[dashed] (7,0) node[below]{$L_3$} --++ (0,10);
+\draw[dashed] (8.8,0) node[below]{$L_4$} --++ (0,10);
+\end{tikzpicture}
+
+\begin{enumerate}[resume]
+
+\item What is the quantity of labor demanded at a binding minimum wage of $w_3$?
+\vspace{-8pt}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $L_1$
+\item $L_2$
+\item $L_3$
+\item $L_4$
+\end{enumerate}
+\end{multicols}
+
+\item What is the quantity of labor supplied at a binding minimum wage of $w_3$?
+\vspace{-8pt}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $L_1$
+\item $L_2$
+\item $L_3$
+\item $L_4$
+\end{enumerate}
+\end{multicols}
+
+\item The binding minimum wage of $w_3$ leads to surplus of labor of:
+\vspace{-8pt}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $L_3 - L_1$.
+\item $L_3 - L_2$.
+\item $L_4 - L_1$.
+\item $L_4 - L_2$.
+\end{enumerate}
+\end{multicols}
+
+\end{enumerate}
+
+
+\end{document}

@@ -1,0 +1,293 @@
+\documentclass[
+    letterpaper,paper=portrait,fleqn,
+    DIV=16,fontsize=12pt,twoside=semi,
+    parskip=full-,
+    headings=standardclasses]
+{scrartcl}
+
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+\ohead{\pagemark}
+
+\usepackage{mathtools}
+\usepackage[fullfamily,footnotefigures,swash,lf,mathtabular]{MinionPro}
+\usepackage[eqno,enum,lineno]{tabfigures}
+
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{dcolumn}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+% Reduce vertical spacing around headings
+\RedeclareSectionCommand[
+  runin=false,afterindent=false,
+  beforeskip=0.5\baselineskip,
+  afterskip=0.5\baselineskip
+]{section}
+\RedeclareSectionCommand[
+  runin=false,afterindent=false,
+  beforeskip=0pt
+]{paragraph}
+% Allow display-mode math to break across pages
+\allowdisplaybreaks[1]
+% Set RaggedRight paragraph indent
+\setlength{\RaggedRightParindent}{\parindent}
+% Create additional column types
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}p{1in}}
+% Bold enumerate numbering
+\setlist[enumerate,1]{label=\bfseries\arabic*.}
+%\setlist{itemsep=\baselineskip,parsep=0\baselineskip}
+% Sections counted in alphabet and formatted as ``Parts''
+\renewcommand*\thesection{\Alph{section}}
+\renewcommand\sectionformat{Part~\thesection:\enskip}
+
+\begin{document}
+\RaggedRight
+\thispagestyle{plain}
+
+ECO 120-04 \\
+Lucas Reddinger \\
+Wednesday 2 November 2022 \hfill Your full name: \underline{\hspace{3.25in}}
+
+\vspace{0.7\baselineskip}
+\textbf{\LARGE Assignment 8: Economic measurement}
+\vspace{0.3\baselineskip}
+
+\emph{Due Monday 7 November.} Please submit hardcopy at the beginning of class (11:00 a.m.), or if you prefer, under the door of Wimberly Hall 339C by 10:50 a.m.
+
+\emph{Please ensure that all of your responses include appropriate units.}
+
+\section{Aggregate accounting}
+
+Suppose Wisconsin has a two-good economy with the following historical data for 2019 and 2020:
+
+\begin{tabular}{l*5{d{3.0}}}
+\toprule
+& \multicolumn{2}{c}{Wisconsin, 2019} & \multicolumn{2}{c}{Wisconsin, 2020}\\
+\cmidrule(r){2-3} \cmidrule(l){4-5}
+Good & \multicolumn{1}{c}{Price (\$/pound)} & \multicolumn{1}{c}{Output (billion pounds)} & \multicolumn{1}{c}{Price (\$/pound)}  & \multicolumn{1}{c}{Output (billion pounds)} \\
+\midrule
+Cow bev &  1.50 & 10 & 1.00 & 20 \\
+Soy bev &  2.00 & 25 & 3.00 & 20 \\
+\bottomrule
+\end{tabular}
+
+\begin{enumerate}
+
+\item What was the nominal GDP of the Wisconsin two-good economy in 2019?
+
+\vfill
+
+\item What was the nominal GDP of the Wisconsin two-good economy in 2020?
+
+\vfill
+
+\item What was the percent change in nominal GDP from 2019 to 2020?
+
+\vfill
+
+\vspace{-2\baselineskip}
+\clearpage
+
+\item For the following questions, please use 2019 as the base year.
+
+\begin{enumerate}
+
+\item What was the real GDP of the Wisconsin two-good economy in 2019?
+
+\vfill
+
+\item What was the real GDP of the Wisconsin two-good economy in 2020?
+
+\vfill
+
+\item What was the percent change in real GDP from 2019 to 2020?
+
+\vfill
+
+\item Using your calculation of nominal GDP above and your calculation of real GDP (with a 2019 base year), how much of the percentage change in nominal GDP is due to inflation?
+
+\vfill
+
+\end{enumerate}
+
+\item For the following questions, please use 2020 as the base year.
+
+\begin{enumerate}
+
+\item What was real GDP of the Wisconsin two-good economy in 2019?
+
+\vfill
+
+\item What was real GDP of the Wisconsin two-good economy in 2020?
+
+\vfill
+
+\vspace{-2\baselineskip}
+\clearpage
+
+\item What was the percent change in real GDP from 2019 to 2020?
+
+\vfill
+
+\item Using your calculation of nominal GDP above and your calculation of real GDP (with a 2020 base year), how much of the percentage change in nominal GDP is due to inflation?
+
+\vfill
+
+\end{enumerate}
+
+\item For the following questions, please use 2019 as the base year.
+
+\begin{enumerate}
+
+\item Calculate a consumer price index for 2019.
+
+\vfill
+
+\item Calculate a consumer price index for 2020.
+
+\vfill
+
+\item Calculate the percentage change in your index from 2019 to 2020.
+
+\vfill
+
+\item Please interpret your last result with a sentence.
+
+\vfill
+
+\vspace{-2\baselineskip}
+
+\end{enumerate}
+
+\clearpage
+
+\item For the following questions, please use 2020 as the base year.
+
+\begin{enumerate}
+
+\item Calculate a consumer price index for 2019.
+
+\vfill
+
+\item Calculate a consumer price index for 2020.
+
+\vfill
+
+\item Calculate the percentage change in your index from 2019 to 2020.
+
+\vfill
+
+\item Please interpret your last result with a sentence.
+
+\vfill
+
+\end{enumerate}
+
+\end{enumerate}
+
+\section{The La Crosse-Onalaska, WI-MN metropolitan statistical area}
+
+Consider these actual labor force data from the Bureau of Labor Statistics:
+
+\begin{tabular}{l*5{d{2.1}}}
+\toprule
+\multicolumn{6}{c}{Labor force data for the La Crosse-Onalaska, WI-MN MSA} \\
+\midrule
+& \multicolumn{5}{c}{Number of persons, in thousands} \\
+\cmidrule{2-6}
+& \multicolumn{1}{c}{Oct.~2021} & \multicolumn{1}{c}{Nov.~2021} & \multicolumn{1}{c}{Dec.~2021} & \multicolumn{1}{c}{Jan.~2022} & \multicolumn{1}{c}{Feb.~2022} \\
+\midrule
+Civilian Labor Force & 78.2 & 78.6 & 78.3 & 77.5 & 78.6 \\
+Employment & 76.6 & 77.1 & 76.8 & 75.4 & 76.5 \\
+Unemployment & 1.6 & 1.5 & 1.4 & 2.1 & 2.2 \\
+\bottomrule
+\end{tabular}
+
+\clearpage
+
+Unfortunately the BLS does not provide data on the labor force participation rate for MSAs. So let's try to estimate one ourselves using national data.
+
+In the US during Nov 2021, the working-age population was 205,225,809; the total population was 332,598,000. The population of the La Crosse MSA was 139,211. Assume that the La Crosse MSA has the same age distribution as the entire US.
+
+\begin{enumerate}
+
+\item Calculate an estimate of the working-age population for the La Crosse MSA. Assume that this population was constant across all the months listed above.
+
+\vfill
+
+\item Consider the fall quarter of 2021 (Q4) by comparing Oct.~2021 and Jan.~2022.
+
+\begin{enumerate}
+\item What was the labor participation rate in Oct.~2021?
+
+\vfill
+
+\item What was the unemployment rate in Oct.~2021?
+
+\vfill
+
+\item What was the labor participation rate in Jan.~2022?
+
+\vfill
+
+\item What was the unemployment rate in Jan.~2022?
+
+\vfill
+
+\item What was the change in labor participation rate during 2021 Q4?
+
+\vfill
+
+\item What was the change in the unemployment rate during 2021 Q4?
+
+\vfill
+\vspace{-2\baselineskip}
+
+\clearpage
+
+\item By how many people did the labor force change over this period? \label{here}
+
+\vfill
+
+\item By how many people did unemployment change over this period?
+
+\vfill
+
+\end{enumerate}
+\item Suppose that those people who left the labor force over the course of 2021 Q4 had been unemployed and gave up on their job search. What if they had instead continued their job search? In this part, consider a scenario in which these people kept searching for a job. That is, count the people from \ref{here} as being unemployed (and thus also part of the labor force) in Jan.~2022.
+
+\begin{enumerate}
+\item How many unemployed people would have been counted for Jan.~2022?
+
+\vfill
+
+\item The labor force in Jan.~2022 would have totaled what value?
+
+\vfill
+
+\item What would the labor participation rate have been for Jan.~2022?
+
+\vfill
+
+\item What would the unemployment rate have been for Jan.~2022?
+
+\vfill
+
+\item What would the change in labor participation rate have been for 2021 Q4?
+
+\vfill
+
+\item What would the change in the unemployment rate have been for 2021 Q4?
+
+\vfill
+\vspace{-2\baselineskip}
+
+\end{enumerate}
+\end{enumerate}
+
+\end{document}

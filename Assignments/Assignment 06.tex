@@ -1,0 +1,173 @@
+\documentclass[
+    letterpaper,paper=portrait,fleqn,
+    DIV=16,fontsize=12pt,twoside=semi,
+    parskip=full-,
+    headings=standardclasses]
+{scrartcl}
+
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+\ohead{\pagemark}
+
+\usepackage{mathtools}
+\usepackage[fullfamily,footnotefigures,swash,lf,mathtabular]{MinionPro}
+\usepackage[eqno,enum,lineno]{tabfigures}
+
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{dcolumn}
+\usepackage{tikz}
+
+% Reduce vertical spacing around headings
+\RedeclareSectionCommand[
+  runin=false,
+  beforeskip=0.5\baselineskip
+]{section}
+\RedeclareSectionCommand[
+  beforeskip=0pt
+]{paragraph}
+% Allow display-mode math to break across pages
+\allowdisplaybreaks[1]
+% Set RaggedRight paragraph indent
+\setlength{\RaggedRightParindent}{\parindent}
+% Create additional column types
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}p{1in}}
+% Bold enumerate numbering
+\setlist[enumerate,1]{label=\bfseries\arabic*.}
+%\setlist{itemsep=\baselineskip,parsep=0\baselineskip}
+% Sections counted in alphabet and formatted as ``Parts''
+\renewcommand*\thesection{\Alph{section}}
+\renewcommand\sectionformat{Part~\thesection:\enskip}
+
+\begin{document}
+\RaggedRight
+\thispagestyle{plain}
+
+ECO 120-04 \\
+Lucas Reddinger \\
+Monday 24 October 2022 \hfill Your full name: \underline{\hspace{3.25in}}
+
+\vspace{0.7\baselineskip}
+\textbf{\LARGE Assignment 6: Employment and output}
+\vspace{0.3\baselineskip}
+
+\emph{Due Friday 28 October.} Please submit hardcopy at the beginning of class (11:00 a.m.), or if you prefer, under the door of Wimberly Hall 339C by 10:50 a.m.
+
+\section{BLS definitions\label{sec:bls-definitions}}
+
+The Bureau of Labor Statistics (BLS) surveys people aged 16 or older and applies these definitions:
+\begin{itemize}
+\item \emph{Employed}: Those who performed any work (including self-employment or on a family farm).
+\item \emph{Unemployed}: Those who had no employment, were available for employment, and looked for a job in the preceding four weeks.
+\item \emph{Labor force}: The sum of employed and unemployed people.
+\item \emph{Unemployment rate}: The number unemployed as a percent of the labor force.
+\item \emph{Labor force participation rate}: The labor force as a percent of the population.
+\end{itemize}
+
+\section{Entering and exiting the labor force}
+
+For this section, please
+\begin{itemize}[nosep]
+\item use four digits after the decimal in your answers,
+\item specify units, such as percent (\%) or percentage points (p.p.) as applicable, and
+\item use the data in the following table and the BLS definitions above.
+\end{itemize}
+
+\begin{tabular}{ld{3.0}}
+\toprule
+Classification & \multicolumn{1}{l}{People (millions)} \\
+\midrule
+Employed & 158.8 \\ 
+Unemployed & 5.8 \\
+Working-age population & 259.6 \\
+\bottomrule
+\end{tabular}
+
+\clearpage
+
+\begin{enumerate}
+\item Write the formula for \emph{the labor force participation rate} as a function of \emph{employment}, \emph{unemployment}, and \emph{the working-age population}.
+
+\vfill
+
+\item What was the labor force participation rate in February 2020?
+\vfill
+\item What was the unemployment rate in February 2020?
+\vfill
+\item Suppose that in March 2020, 1 million unemployed people quit looking for a job, and the number of employed people stayed the same as in February 2020.
+
+\begin{enumerate}
+\item What would be the unemployment rate in March 2020?
+\vfill
+\item What was the change in the unemployment rate from February 2020 to March 2020?
+\vfill
+\item Why did the unemployment rate change without any change in employment?
+\vfill
+\end{enumerate}
+
+\clearpage
+
+\item \emph{Now instead suppose} that in March 2020, the number of unemployed people remained the same as in February 2020, while 5 million people quit their jobs to be stay-at-home parents.
+
+\begin{enumerate}
+\item In this case, what would be the unemployment rate in March 2020? Please specify units.
+\vfill
+\item What was the change in the unemployment rate from February 2020 to March 2020? Please specify units.
+\vfill
+\item Why did the unemployment rate change without any change in unemployment?
+\vfill
+\vfill
+\end{enumerate}
+\end{enumerate}
+
+\section{Production and output}
+
+For this section, please use the fictional data below. \emph{Please specify units for each answer.}
+
+\begin{tabular}{l*5{d{3.0}}}
+\toprule
+Year & \multicolumn{2}{c}{Carrots} & \multicolumn{2}{c}{Onions}\\
+\cmidrule(r){2-3} \cmidrule(l){4-5}
+& \multicolumn{1}{c}{Price (\$/ton)} & \multicolumn{1}{c}{Output (tons)} & \multicolumn{1}{c}{Price (\$/ton)} & \multicolumn{1}{c}{Output (tons)} \\
+\midrule
+2019 & 2 & 10 & 3 & 15 \\
+2020 & 3 &  8 & 4 & 11 \\
+\bottomrule
+\end{tabular}
+
+\begin{enumerate}
+\item What was nominal GDP in 2019?
+\vfill
+\item What was nominal GDP in 2020?
+\vfill
+\item What was the percent change in nominal GDP from 2019 to 2020?
+\vfill
+
+\clearpage
+
+\item For this question, please use 2019 as the base year.
+\begin{enumerate}
+\item What was real GDP in 2019?
+\vfill
+\item What was real GDP in 2020?
+\vfill
+\item What was the percent change in real GDP from 2019 to 2020?
+\vfill
+\end{enumerate}
+\item For this question, please use 2020 as the base year.
+\begin{enumerate}
+\item What was real GDP in 2019?
+\vfill
+\item What was real GDP in 2020?
+\vfill
+\item What was the percent change in real GDP from 2019 to 2020? 
+\vfill
+\end{enumerate}
+\item Why is the percent change in nominal GDP so different than the percent change in real GDP?
+\vfill
+\end{enumerate}
+
+\end{document}

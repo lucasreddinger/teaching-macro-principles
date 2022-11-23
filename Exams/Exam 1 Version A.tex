@@ -1,0 +1,347 @@
+\documentclass[
+    letterpaper,paper=portrait,fleqn,
+    DIV=16,fontsize=12pt,twoside=semi,
+    parskip=full-,
+    headings=standardclasses]
+{scrartcl}
+
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+\ohead{\pagemark}
+
+\usepackage{mathtools}
+\usepackage[fullfamily,footnotefigures,swash,lf,mathtabular]{MinionPro}
+\usepackage[eqno,enum,lineno]{tabfigures}
+
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{dcolumn}
+\usepackage{tikz}
+
+% Reduce vertical spacing around headings
+\RedeclareSectionCommand[
+  runin=false,
+  beforeskip=0.5\baselineskip
+]{section}
+\RedeclareSectionCommand[
+  beforeskip=0pt
+]{paragraph}
+% Allow display-mode math to break across pages
+\allowdisplaybreaks[1]
+% Set RaggedRight paragraph indent
+\setlength{\RaggedRightParindent}{\parindent}
+% Create additional column types
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}p{1in}}
+% Bold enumerate numbering
+\setlist[enumerate,1]{label=\bfseries\arabic*.}
+\setlist[enumerate,2]{label=\bfseries(\alph*),nosep}
+% Sections counted in alphabet and formatted as ``Parts''
+\renewcommand*\thesection{\Alph{section}}
+\renewcommand\sectionformat{Part~\thesection:\enskip}
+
+\begin{document}
+\RaggedRight
+\thispagestyle{plain}
+
+ECO 120-04 \\
+Lucas Reddinger \\
+Friday 14 October 2022 \hfill Your full name: \underline{\hspace{3.25in}}
+
+\vspace{0.7\baselineskip}
+\textbf{\LARGE Exam 1}
+\vspace{0.3\baselineskip}
+
+Show your work to maximize partial credit.
+
+\clearpage
+
+\section{An Argentine breakfast counter}
+
+You run a breakfast counter that serves breakfast empanadas and coffee. When production is efficient, you can produce the following combinations of empanadas and coffee in a week:
+
+\begin{tabular}{lll}
+\toprule
+Combination & Empanadas & Coffee (cups) \\
+\midrule
+$A$ & 0 & 500 \\
+$B$ & 100 & 450 \\
+$C$ & 200 & 350 \\
+$D$ & 300 & 200 \\
+$E$ & 400 & 0 \\
+\bottomrule
+\end{tabular}
+
+Line segments between successive points also constitute efficient production. That is, you can connect these points with straight lines to form the production possibility frontier (PPF).
+
+\begin{enumerate}
+
+\item Please graph the PPF, with empanadas on the horizontal axis and cups of coffee on the vertical axis. Label the PPF and the axes.
+
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[x=1mm,y=1mm,scale=0.15]
+\draw[step=25mm, very thin, black!20!white] (0,0) grid (600,600);
+\draw[step=100mm, thick, black!40!white] (0,0) grid (600,600);
+\draw[very thick,->] (0,0) -- (0,625) {};
+\draw[very thick,->] (0,0) -- (625,0) {};
+\foreach \i in {0,100,...,600}{\draw[thick] (\i,0mm) -- + (0,-4mm) node[below] {\i};}
+\foreach \i in {0,100,...,600}{\draw[thick] (0mm,\i) -- + (-4mm,0) node[ left] {\i};}
+\end{tikzpicture}
+\vspace{18pt}
+\end{center}
+
+\begin{enumerate}[resume]
+
+\item How many cups of coffee do the first 100 empanadas cost?
+
+\vfill
+
+\clearpage
+
+\item How many cups of coffee do the last 100 empanadas cost (if you only produce empanadas)?
+
+\vfill
+
+\item How many cups of coffee do the first 150 empanadas cost?
+
+\vfill
+
+\item How many cups of coffee do the last 150 empanadas cost (if you only produce empanadas)?
+
+\vfill
+
+\item How many empanadas do the first 100 cups of coffee cost?
+
+\vfill
+
+\item How many empanadas do the last 100 cups of coffee cost (if you only produce coffee)?
+
+\vfill
+
+\item Based on your answers, is the cost of producing empanadas increasing or decreasing?
+
+\vfill
+
+\item Based on your answers, is the cost of producing cups of coffee increasing or decreasing?
+
+\vfill
+
+\item What are the costs and benefits of producing Combination $B$ instead of Combination $D$?
+
+\vfill
+
+\vspace{-2\baselineskip}
+
+\end{enumerate}
+
+\clearpage
+
+\section{Multiple choice}
+
+For each of the questions in this section, please circle the best response.
+
+\begin{enumerate}
+
+\item In factor markets,
+\vspace{-8pt}
+\begin{enumerate}
+\item households supply goods and services.
+\item households supply resources.
+\item firms demand goods and services.
+\item firms supply goods and services.
+\end{enumerate}
+
+\item Which entities supply capital?
+\vspace{-8pt}
+\begin{enumerate}
+\item firms
+\item industry
+\item households
+\item governments
+\end{enumerate}
+
+\item Which asset typically yields the greatest returns?
+\vspace{-8pt}
+\begin{enumerate}
+\item stocks
+\item bonds
+\item U.S.~Treasury bills
+\end{enumerate}
+
+\item Which asset typically involves the greatest risk?
+\vspace{-8pt}
+\begin{enumerate}
+\item stocks
+\item bonds
+\item U.S.~Treasury bills
+\end{enumerate}
+
+\item If the price of an asset is expected to rise in the future
+\vspace{-8pt}
+\begin{enumerate}
+\item asset owners will be more willing to sell it now.
+\item it will be more in demand today.
+\item the price of the asset will fall today.
+\item the market is irrational.
+\end{enumerate}
+
+\item In which market are stocks and bonds traded?
+\vspace{-8pt}
+\begin{enumerate}
+\item Product market
+\item Wall Street
+\item Financial market
+\item Labor market
+\end{enumerate}
+
+\end{enumerate}
+
+\clearpage
+
+\section{The U.S.~labor market}
+
+\begin{enumerate}
+
+\item Draw a market demand curve and a market supply curve for hourly labor in the U.S.~in 2019. In 2020, labor supply decreased substantially. Fully depict the change in equilibrium.
+
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[x=4mm, y=4mm]
+\clip(3,3) rectangle (29,29);
+\draw[step=4mm, very thin, black!20!white] (0,0) grid (60,120);
+\draw[step=16mm, thick, black!40!white] (0,0) grid (60,120);
+\end{tikzpicture}
+\vspace{18pt}
+\end{center}
+
+\begin{enumerate}[resume]
+
+\item Describe any changes in price and quantity using complete sentences.
+
+\vfill
+
+\item Explain why labor supply may have decreased in 2020 relative to 2019.
+
+\vfill
+
+\item What is the price of hourly labor called?
+
+\vfill
+
+\vspace{-2\baselineskip}
+
+\end{enumerate}
+
+\clearpage
+
+\section{The U.S.~market for home furnishings}
+
+\begin{enumerate}
+
+\item Depict the U.S.~market for dining sets in equilibrium with a supply and demand model. Label the curves as $S$ and $D$, equilibrium price as $p^*_1$, equilibrium quantity as $q^*_1$, and axes as appropriate.
+
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[x=4mm, y=4mm]
+\clip(3,3) rectangle (37,37);
+\draw[step=4mm, very thin, black!20!white] (0,0) grid (60,120);
+\draw[step=16mm, thick, black!40!white] (0,0) grid (60,120);
+\end{tikzpicture}
+\vspace{18pt}
+\end{center}
+
+\begin{enumerate}[resume]
+
+\item Due to the pandemic keeping people at home, more people want to buy new dining sets. Appropriately depict the new market-clearing equilibrium (e.g., prices, quantities, curves) using subscripts of 2.
+
+\item What type of market is this---a factor market or a product market?
+
+\vfill
+
+\vspace{-2\baselineskip}
+
+\clearpage
+
+\item What entities does the demand curve represent?
+
+\vfill
+
+\item What entities does the supply curve represent?
+
+\vfill
+
+\item In complete sentences, please describe how the pandemic affected the equilibrium price of dining sets.
+
+\vfill
+
+\item In complete sentences, please describe how the pandemic affected the equilibrium quantity of dining sets exchanged (i.e., bought and sold) in a given month.
+
+\vfill
+
+\vspace{-2\baselineskip}
+
+\end{enumerate}
+
+\clearpage
+
+\section{The U.S.~market for crude oil}
+
+\begin{enumerate}
+
+\item Depict the U.S.~market for crude oil (units of barrels) in equilibrium with a supply and demand model. Label the curves as $S$ and $D$, equilibrium price as $p^*_1$, equilibrium quantity as $q^*_1$, and axes as appropriate.
+
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[x=4mm, y=4mm]
+\clip(3,3) rectangle (29,29);
+\draw[step=4mm, very thin, black!20!white] (0,0) grid (60,120);
+\draw[step=16mm, thick, black!40!white] (0,0) grid (60,120);
+\end{tikzpicture}
+\vspace{18pt}
+\end{center}
+
+\begin{enumerate}[resume]
+
+\item A hurricane strikes Texas, destroying off-shore oil rigs. On the same graph above, please illustrate this change and label any new curves with a subscript 2.
+
+\item Due to increased consumer demand for gasoline, firms who refine crude oil increase their demand for crude. On the same graph above, please illustrate this change and label any new curves with a subscript 3.
+
+\item Given all these changes to supply and demand, please label the new equilibrium price as $p^*_4$
+and equilibrium quantity of oil as $q^*_4$.
+
+\item What type of market is this---a factor market or a product market?
+
+\vfill
+
+\vspace{-2\baselineskip}
+
+\clearpage
+
+\item What entities does the demand curve represent?
+
+\vfill
+
+\item What entities does the supply curve represent?
+
+\vfill
+
+\item In complete sentences, please describe how the hurricane affected the equilibrium price of oil.
+
+\vfill
+
+\item In complete sentences, please describe how the hurricane affected the equilibrium quantity of crude oil exchanged (i.e., bought and sold) in a given month.
+
+\vfill
+
+\end{enumerate}
+
+\clearpage
+
+\end{document}

@@ -1,0 +1,308 @@
+\documentclass[
+    letterpaper,paper=portrait,fleqn,
+    DIV=16,fontsize=12pt,twoside=semi,
+    parskip=full-,
+    headings=standardclasses]
+{scrartcl}
+
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+\ohead[Last updated 16 November 2022.]{\pagemark}
+
+\usepackage{mathtools}
+\usepackage[fullfamily,footnotefigures,swash,lf,mathtabular]{MinionPro}
+\usepackage[eqno,enum,lineno]{tabfigures}
+
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{dcolumn}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage[outline]{contour}
+\usepackage{mdframed}
+
+\usetikzlibrary{patterns}
+\usetikzlibrary{arrows,arrows.meta}
+\contourlength{0.15em}
+
+% Reduce vertical spacing around headings
+\RedeclareSectionCommand[
+  runin=false,afterindent=false,
+  beforeskip=0.5\baselineskip,
+  afterskip=0.5\baselineskip
+]{section}
+\RedeclareSectionCommand[
+  runin=false,afterindent=false,
+  beforeskip=0pt
+]{paragraph}
+% Allow display-mode math to break across pages
+\allowdisplaybreaks[1]
+% Set RaggedRight paragraph indent
+\setlength{\RaggedRightParindent}{\parindent}
+% Create additional column types
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}p{1in}}
+% Bold enumerate numbering
+\setlist[enumerate,1]{label=\bfseries\arabic*.}
+%\setlist{itemsep=\baselineskip,parsep=0\baselineskip}
+% Sections counted in alphabet and formatted as ``Parts''
+\renewcommand*\thesection{\Alph{section}}
+\renewcommand\sectionformat{Part~\thesection:\enskip}
+
+\newmdenv[leftline=true,rightline=false,topline=false,bottomline=false,linewidth=2pt]{solution}
+
+\begin{document}
+\RaggedRight
+\thispagestyle{plain}
+
+ECO 120-04 \\
+Lucas Reddinger \\
+Wednesday 2 November 2022
+
+\vspace{0.7\baselineskip}
+\textbf{\LARGE Assignment 6 Solutions}
+
+\section{BLS definitions\label{sec:bls-definitions}}
+
+The Bureau of Labor Statistics (BLS) surveys people aged 16 or older and applies these definitions:
+\begin{itemize}[nosep]
+\item \emph{Employed}: Those who performed any work (including self-employment or on a family farm).
+\item \emph{Unemployed}: Those who had no employment, were available for employment, and looked for a job in the preceding four weeks.
+\item \emph{Labor force}: The sum of employed and unemployed people.
+\item \emph{Unemployment rate}: The number unemployed as a percent of the labor force.
+\item \emph{Labor force participation rate}: The labor force as a percent of the population.
+\end{itemize}
+
+\section{Entering and exiting the labor force}
+
+For this section, please
+\begin{itemize}[nosep]
+\item use four digits after the decimal in your answers,
+\item specify units, such as percent (\%) or percentage points (p.p.) as applicable, and
+\item use the data in the following table and the BLS definitions above.
+\end{itemize}
+
+\begin{tabular}{ld{3.0}}
+\toprule
+\multicolumn{2}{c}{BLS data for the U.S.~in February 2020} \\
+\midrule
+Classification & \multicolumn{1}{l}{People, millions} \\
+\midrule
+Employed & 158.8 \\ 
+Unemployed & 5.8 \\
+Working-age population & 259.6 \\
+\bottomrule
+\end{tabular}
+
+\clearpage
+
+\begin{enumerate}
+\item Write the formula for \emph{the labor force participation rate} as a function of \emph{employment}, \emph{unemployment}, and \emph{the working-age population}.
+
+\begin{solution}
+\vspace{-1.0\baselineskip}
+\begin{align*}
+\text{labor force participation rate} = \frac{ \text{employment} + \text{unemployment} }{ \text{the working-age population} }.
+\end{align*}
+\end{solution}
+
+\item What was the labor force participation rate in February 2020?
+
+\begin{solution}
+\vspace{-1.0\baselineskip}
+\begin{align*}
+\text{labor force participation rate} = \frac{ 158.8 \text{ M people} + 5.8 \text{ M people} }{ 259.6 \text{ M people} } = \frac{164.6}{259.6} = 0.6341 = 63.41\%.
+\end{align*}
+\end{solution}
+
+\item What was the unemployment rate in February 2020?
+
+\begin{solution}
+\vspace{-1.0\baselineskip}
+\begin{align*}
+\text{unemployment rate} &= \frac{ \text{unemployment} }{ \text{the labor force} } = \frac{ \text{unemployment} }{ \text{employment} + \text{unemployment} }.\\
+\text{unemployment rate} &= \frac{ 5.8 \text{ M people} }{ 158.8 \text{ M people} + 5.8 \text{ M people} } = \frac{5.8}{164.6} = 0.0352 = 3.52\%.
+\end{align*}
+\end{solution}
+
+\item Suppose that in March 2020, 1 million unemployed people quit looking for a job, and the number of employed people stayed the same as in February 2020.
+
+\begin{enumerate}
+\item What would be the unemployment rate in March 2020?
+
+\begin{solution}
+\vspace{-1.0\baselineskip}
+\begin{align*}
+\text{unemployment rate} &= \frac{ 4.8 \text{ M people} }{ 158.8 \text{ M people} + 4.8 \text{ M people} } = \frac{4.8}{163.6} = 0.0293 = 2.93\%.
+\end{align*}
+\end{solution}
+
+\item What was the change in the unemployment rate from February 2020 to March 2020?
+
+\begin{solution}
+\vspace{-1.0\baselineskip}
+\begin{align*}
+\text{change} &= x_\text{final} - x_\text{initial} \\
+\text{change in unemp rate} &= \text{unemp rate}_\text{2020-Mar} - \text{unemp rate}_\text{2020-Feb} \\
+&= 2.93\% - 3.52\% = -0.59 \text{ p.p.}
+\end{align*}
+
+Suppose we mistakenly wrote that the unemployment rate changed by $-0.59\%$; we wrote units of percent instead of percentage points (p.p.). Then $\text{unemp rate}_\text{2020-Mar} = (100\% - 0.59\%) \times \text{unemp rate}_\text{2020-Feb} = (1 - 0.0059) \times 3.52\% = 3.49\%$. This isn't the true value.
+
+Here, a decrease in the unemployment rate of $0.59$ percentage points instead conveys this: the prior rate, $3.52\%$ declined by $0.59$ percentage \emph{points}. Doing this simpler arithmetic, we find that $\text{unemp rate}_\text{2020-Mar} = 3.52\% - 0.59 \text{ p.p.} = 2.93 \%$, which is the true value.
+\end{solution}
+
+\item Why did the unemployment rate change without any change in employment?
+
+\begin{solution}
+People who switch between employment and unemployment obviously affect the rate.
+
+In this case, however, unemployed people decided to leave the labor force altogether, which affected the unemployment rate.
+\end{solution}
+
+\end{enumerate}
+
+\item \emph{Now instead suppose} that in March 2020, the number of unemployed people remained the same as in February 2020, while 5 million people quit their jobs to be stay-at-home parents.
+
+\begin{enumerate}
+
+\item In this case, what would be the unemployment rate in March 2020? Please specify units.
+
+\begin{solution}
+\vspace{-1.0\baselineskip}
+\begin{align*}
+\text{unemp rate}_\text{2020-Mar} &= \frac{ 5.8 \text{ M people} }{ 153.8 \text{ M people} + 5.8 \text{ M people} } = 4.10\%
+\end{align*}
+\end{solution}
+
+\item What was the change in the unemployment rate from February 2020 to March 2020? Please specify units.
+
+\begin{solution}
+\vspace{-1.0\baselineskip}
+\begin{align*}
+\text{change in unemp rate} = 4.10\% - 3.52\% = 0.57 \text{ p.p.}
+\end{align*}
+\end{solution}
+
+\item Why did the unemployment rate change without any change in unemployment?
+
+\begin{solution}
+Employed people left the labor force. As a result, unemployed people constitute a greater share of the labor force.
+\end{solution}
+
+\end{enumerate}
+
+\end{enumerate}
+
+\section{Production and output}
+
+For this section, please use the fictional data below. \emph{Please specify units for each answer.}
+
+\begin{tabular}{l*5{d{3.0}}}
+\toprule
+Year & \multicolumn{2}{c}{Carrots} & \multicolumn{2}{c}{Onions}\\
+\cmidrule(r){2-3} \cmidrule(l){4-5}
+& \multicolumn{1}{c}{Price (\$/ton)} & \multicolumn{1}{c}{Output (tons)} & \multicolumn{1}{c}{Price (\$/ton)} & \multicolumn{1}{c}{Output (tons)} \\
+\midrule
+2019 & 2 & 10 & 3 & 15 \\
+2020 & 3 &  8 & 4 & 11 \\
+\bottomrule
+\end{tabular}
+
+\begin{enumerate}
+
+\item What was nominal GDP in 2019?
+
+\begin{solution}
+\vspace{-1.0\baselineskip}
+\begin{align*}
+\text{nom. gdp}_\text{2019} = \frac{\$2}{\text{ton}} \times 10 \text{ tons} + \frac{\$3}{\text{ton}} \times 15 \text{ tons} = \$65
+\end{align*}
+\end{solution}
+
+\item What was nominal GDP in 2020?
+
+\begin{solution}
+\vspace{-1.0\baselineskip}
+\begin{align*}
+\text{nom. gdp}_\text{2020} = \frac{\$3}{\text{ton}} \times 8 \text{ tons} + \frac{\$4}{\text{ton}} \times 11 \text{ tons} = \$68
+\end{align*}
+\end{solution}
+
+\item What was the percent change in nominal GDP from 2019 to 2020?
+
+\begin{solution}
+\vspace{-1.0\baselineskip}
+\begin{align*}
+\text{percent change} &= \frac{ x_\text{final} - x_\text{initial} }{ x_\text{initial} } \\
+\text{\% change in nom. gdp} &= \frac{\$68 - \$65}{\$65} = 4.62\%
+\end{align*}
+\end{solution}
+
+\item For this question, please use 2019 as the base year.
+
+\begin{enumerate}
+
+\vspace{-6pt}
+\item What was real GDP in 2019?
+
+\begin{solution}
+$\$65$
+\end{solution}
+
+\vspace{-6pt}
+\item What was real GDP in 2020?
+
+\begin{solution}
+$\$49$
+\end{solution}
+
+\vspace{-6pt}
+\item What was the percent change in real GDP from 2019 to 2020?
+
+\begin{solution}
+$-24.61\%$
+\end{solution}
+
+\end{enumerate}
+
+\vspace{-6pt}
+\item For this question, please use 2020 as the base year.
+
+\begin{enumerate}
+
+\vspace{-6pt}
+\item What was real GDP in 2019?
+
+\begin{solution}
+$\$90$
+\end{solution}
+
+\vspace{-6pt}
+\item What was real GDP in 2020?
+
+\begin{solution}
+$\$68$
+\end{solution}
+
+\vspace{-6pt}
+\item What was the percent change in real GDP from 2019 to 2020?
+
+\begin{solution}
+$-24.44\%$
+\end{solution}
+
+\end{enumerate}
+
+\vspace{-6pt}
+\item Why is the percent change in nominal GDP so different than the percent change in real GDP?
+
+\begin{solution}
+The price of carrots increased by $50\%$. The price of onions increased by $33\%$. This inflation made the change in output larger in nominal terms than it was in real terms.
+\end{solution}
+
+\end{enumerate}
+
+\end{document}

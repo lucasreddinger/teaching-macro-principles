@@ -1,0 +1,79 @@
+\documentclass[
+    letterpaper,paper=portrait,fleqn,
+    DIV=16,fontsize=11pt,twoside=false,
+    parskip=full-,
+    headings=standardclasses]
+{scrartcl}
+
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+\ohead{\pagemark}
+
+\usepackage{mathtools}
+\usepackage[fullfamily,footnotefigures,swash,lf,mathtabular]{MinionPro}
+\usepackage[eqno,enum,lineno]{tabfigures}
+
+\usepackage[table,usenames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+
+% Reduce vertical spacing around headings
+\RedeclareSectionCommand[
+  runin=false,afterindent=false,
+  beforeskip=0\baselineskip,
+  afterskip=0\baselineskip
+]{section}
+\setlist[enumerate,1]{label=(\roman*),nosep}
+\setlist[itemize,1]{nosep}
+\renewcommand*\thesection{\Alph{section}}
+\renewcommand\sectionformat{Option~\thesection:\enskip}
+
+\begin{document}
+\RaggedRight
+\thispagestyle{plain}
+
+ECO 120-04 \\
+Lucas Reddinger
+
+\vspace{0.3\baselineskip}
+\textbf{\LARGE Essay Assignment 1}
+\vspace{0.2\baselineskip}
+
+I recommend that you take advantage of your extra free time on November 11 and 14 to begin (and perhaps finish!) this assignment. As with many assignments, you can choose to drag this out, or you can quickly get it off your desk (i.e., ``off your plate,'' if eating is a chore). \emph{This is due in class on November 30.}
+
+In short, your essay should have substance, with no fewer than 500 words and no more than 1,000. If you are comfortable with such vague guidance, then take your own path from here.
+
+If you want more guidance, I recommend the following.
+
+Provide a summary of the lecture or reading(s) to introduce the reader to the subject. If you don't understand something, figure it out (e.g., search the web or talk to me) and explain it more clearly in your essay. A classmate should be able to understand your explanations. This person should also understand who argues what and what that argument roughly is. This should constitute roughly one-quarter to one-half of your essay.
+
+Select a few specific ideas and highlight them. Perhaps you explain arguments in greater detail, or you find some supporting facts to share, or you offer your own reflections.
+
+Conclude briefly with
+\begin{enumerate}
+\item a sentence or two summarizing the works,
+\item a sentence or two summarizing what you highlighted in greater detail,
+\item and a few sentences on what more you would like to learn or research on related topics.
+\end{enumerate}
+
+\section{Innovation}
+
+Attend Prof.~McCloskey's lecture on November 8.
+
+You may wish to also reference \href{https://www.deirdremccloskey.com/docs/pdf/McCloskey_HowGrowthHappens.pdf}{this work} of hers (e.g., if you need more material to discuss).
+
+\section{Inequality}
+
+Read these two articles:
+
+\begin{itemize}
+\item \href{https://www.newyorker.com/magazine/2020/03/09/thomas-piketty-goes-global}{\emph{The New Yorker} on Piketty}
+\item \href{https://www.cato.org/policy-report/july/august-2015/how-piketty-misses-point}{McCloskey on Piketty}
+\end{itemize}
+
+\section*{Additional topics}
+
+Additional topics may be provided upon request.
+
+\end{document}
