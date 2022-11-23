@@ -6,6 +6,6 @@ All materials copyright 2021--2022 J. L. Reddinger and licensed as [CC BY 4.0](h
 
 Virtually all of my lectures and some of my assignments use recent economic data. For example:
 
-<img src="example.svg#gh-light-mode-only" alt="An example problem with recent BLS data." />
+<img style="background-color: white;" src="example.svg" alt="An example problem with recent BLS data." />
 
 
