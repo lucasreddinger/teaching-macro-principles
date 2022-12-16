@@ -15,6 +15,7 @@
 
 \usepackage{enumitem}
 \usepackage[dvipsnames]{xcolor}
+\usepackage[capitalise,nameinlink]{cleveref}
 \usepackage{booktabs}
 \usepackage{ragged2e}
 \usepackage{dcolumn}
@@ -29,10 +30,12 @@
 
 % Reduce vertical spacing around headings
 \RedeclareSectionCommand[
-  runin=false,
-  beforeskip=0.5\baselineskip
+  runin=false,afterindent=false,
+  beforeskip=0.5\baselineskip,
+  afterskip=0.5\baselineskip
 ]{section}
 \RedeclareSectionCommand[
+  runin=false,afterindent=false,
   beforeskip=0pt
 ]{paragraph}
 % Allow display-mode math to break across pages
@@ -43,11 +46,13 @@
 \newcolumntype{d}[1]{D{.}{.}{#1}}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}p{1in}}
 % Bold enumerate numbering
-\setlist[enumerate,1]{label=\bfseries\arabic*.}
+\setlist[enumerate,1]{label=\bfseries\arabic*.,ref={\arabic*}}
 %\setlist{itemsep=\baselineskip,parsep=0\baselineskip}
 % Sections counted in alphabet and formatted as ``Parts''
 \renewcommand*\thesection{\Alph{section}}
 \renewcommand\sectionformat{Part~\thesection:\enskip}
+\crefname{section}{part}{parts}
+\crefname{enumi}{question}{questions}
 
 \newmdenv[leftline=true,rightline=false,topline=false,bottomline=false,linewidth=2pt]{solution}
 
@@ -66,19 +71,14 @@ Wednesday 21 September 2022
 
 Suppose that Iowa produces only two goods, corn and soybeans. When production is efficient, Iowa can produce these combinations of corn and soybeans:
 
-\begin{tabular}{RR}
+{\footnotesize\begin{tabular}{lrrrrr}
 \toprule
-\multicolumn{2}{c}{Production of bushels, millions} \\
+Good & \multicolumn{5}{c}{Production of bushels, millions} \\
 \midrule
-\multicolumn{1}{c}{Corn} & \multicolumn{1}{c}{Soybeans} \\
-\midrule
-    0 & 2,000 \\
-1,500 & 1,750 \\
-3,000 & 1,500 \\
-4,500 & 1,000 \\
-6,000 & 0 \\
+Corn     & 0 & 1,500 & 3,000 & 4,500 & 6,000 \\
+Soybeans & 2,000 & 1,750 & 1,500 & 1,000 & 0 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 
 \begin{enumerate}
 

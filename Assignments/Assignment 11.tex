@@ -1,0 +1,119 @@
+\documentclass[
+    letterpaper,paper=portrait,fleqn,
+    DIV=16,fontsize=12pt,twoside=semi,
+    parskip=full-,
+    headings=standardclasses]
+{scrartcl}
+
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+\ohead{\pagemark}
+
+\usepackage{mathtools}
+\usepackage[fullfamily,footnotefigures,swash,lf,mathtabular]{MinionPro}
+\usepackage[eqno,enum,lineno]{tabfigures}
+\usepackage{pifont}
+
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[capitalise,nameinlink]{cleveref}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{dcolumn}
+\usepackage{tikz}
+
+% Reduce vertical spacing around headings
+\RedeclareSectionCommand[
+  runin=false,afterindent=false,
+  beforeskip=0.5\baselineskip,
+  afterskip=0.5\baselineskip
+]{section}
+\RedeclareSectionCommand[
+  runin=false,afterindent=false,
+  beforeskip=0pt
+]{paragraph}
+% Allow display-mode math to break across pages
+\allowdisplaybreaks[1]
+% Set RaggedRight paragraph indent
+\setlength{\RaggedRightParindent}{\parindent}
+% Create additional column types
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}p{1in}}
+% Bold enumerate numbering
+\setlist[enumerate,1]{label=\bfseries\arabic*.,ref={\arabic*}}
+%\setlist{itemsep=\baselineskip,parsep=0\baselineskip}
+% Sections counted in alphabet and formatted as ``Parts''
+\renewcommand*\thesection{\Alph{section}}
+\renewcommand\sectionformat{Part~\thesection:\enskip}
+\crefname{section}{part}{parts}
+\crefname{enumi}{question}{questions}
+
+\begin{document}
+\RaggedRight
+\thispagestyle{plain}
+
+ECO 120-04 \\
+Lucas Reddinger \\
+Wednesday 30 November 2022 \hfill Your full name: \underline{\hspace{3.25in}}
+
+\vspace{0.7\baselineskip}
+\textbf{\LARGE Assignment 11: The money market}
+\vspace{0.3\baselineskip}
+
+\emph{Due Monday 5 December.} Please submit hardcopy at the beginning of class (11:00 a.m.), or if you prefer, under the door of Wimberly Hall 339C by 10:50 a.m.
+
+{\centering
+
+\vspace{-0.5\baselineskip}
+\Pisymbol{MinionPro-Extra}{121}
+\vspace{-0.5\baselineskip}
+
+}
+
+Suppose that due to hyperinflation in Argentina, a massive influx of demand for the U.S.~dollar arises from Argentines.
+
+\begin{enumerate}
+
+\item Using the model of the money market (for the U.S.~dollar), please illustrate how the prevalence of this new demand affects the nominal interest rate and the quantity of money.
+
+\vspace{2.0\baselineskip}
+
+\begin{center}
+\begin{tikzpicture}[x=4mm, y=4mm]
+\clip(3,3) rectangle (42,27);
+\draw[step=4mm, very thin, black!20!white] (0,0) grid (60,120);
+\draw[step=20mm, thick, black!40!white] (0,0) grid (60,120);
+\end{tikzpicture}
+\end{center}
+
+\vspace{1.0\baselineskip}
+
+\item Prior to this change in demand for the U.S.~dollar, the macroeconomy was in equilibrium at full employment. Using the model of aggregate demand and aggregate supply, please illustrate and explain the impact of the change in interest rates---from question 1, above---on GDP and the aggregate price level.
+
+\vfill
+
+\begin{center}
+\begin{tikzpicture}[x=4mm, y=4mm]
+\clip(3,3) rectangle (42,27);
+\draw[step=4mm, very thin, black!20!white] (0,0) grid (60,120);
+\draw[step=20mm, thick, black!40!white] (0,0) grid (60,120);
+\end{tikzpicture}
+\end{center}
+
+\vspace{1.0\baselineskip}
+
+\item The Federal Reserve wants to \emph{exactly} reverse the impact of the change in interest rates on the macroeconomy.  What is one way in which the Fed can do this? Using the model of the money market illustrate the impact of such a policy on the nominal interest rate and the quantity of money.
+
+\vfill
+
+\begin{center}
+\begin{tikzpicture}[x=4mm, y=4mm]
+\clip(3,3) rectangle (42,27);
+\draw[step=4mm, very thin, black!20!white] (0,0) grid (60,120);
+\draw[step=20mm, thick, black!40!white] (0,0) grid (60,120);
+\end{tikzpicture}
+\end{center}
+
+\end{enumerate}
+
+\end{document}

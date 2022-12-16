@@ -39,12 +39,13 @@
 \newcolumntype{d}[1]{D{.}{.}{#1}}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}p{1in}}
 % Bold enumerate numbering
-\setlist[enumerate,1]{label=\bfseries\arabic*.}
+\setlist[enumerate,1]{label=\bfseries\arabic*.,ref={\arabic*}}
 %\setlist{itemsep=\baselineskip,parsep=0\baselineskip}
 % Sections counted in alphabet and formatted as ``Parts''
 \renewcommand*\thesection{\Alph{section}}
 \renewcommand\sectionformat{Part~\thesection:\enskip}
 \crefname{section}{part}{parts}
+\crefname{enumi}{question}{questions}
 
 \begin{document}
 \RaggedRight
@@ -62,7 +63,7 @@ Wednesday 21 November 2022 \hfill Your full name: \underline{\hspace{3.25in}}
 
 \section{Recessions and expansions}
 
-\begin{enumerate}[font={\bfseries}]
+\begin{enumerate}
 \item Please define a recessionary period using actual output $Y$ and potential output $Y_p$.
 \vfill
 \item Please define an expansionary period using actual output $Y$ and potential output $Y_p$.
@@ -82,11 +83,11 @@ Wednesday 21 November 2022 \hfill Your full name: \underline{\hspace{3.25in}}
 
 Please graph an economy in a recessionary period using the aggregate supply and demand model.
 
-\begin{enumerate}[font={\bfseries}]
+\begin{enumerate}
 \item Begin by drawing and labeling axes.
 \item Draw and label an aggregate demand (AD) and short-run aggregate supply (SRAS) curves.
-\item Label the aggregate price level $P_0$ and the actual output level $Y_0$.
-\item In a recession, is potential output $Y_p$ above or below actual output $Y_0$? \hfill \underline{\hspace{1.5in}}
+\item Label the aggregate price level $P^*_0$ and the actual output level $Y^*_0$.
+\item In a recession, is potential output $Y_p$ above or below actual output $Y^*_0$? \hfill \underline{\hspace{1.5in}}
 \item Add a long-run aggregate supply (LRAS) curve to your graph, and label $Y_p$.
 \end{enumerate}
 
@@ -106,11 +107,11 @@ Please graph an economy in a recessionary period using the aggregate supply and 
 
 Please graph an economy in an expansionary period using the aggregate supply and demand model.
 
-\begin{enumerate}[font={\bfseries}]
+\begin{enumerate}
 \item Begin by drawing and labeling axes.
 \item Draw and label an aggregate demand (AD) and short-run aggregate supply (SRAS) curves.
-\item Label the aggregate price level $P_0$ and the actual output level $Y_0$.
-\item In an expansion, is potential output $Y_p$ above or below actual output $Y_0$? \hfill \underline{\hspace{1.5in}}
+\item Label the aggregate price level $P^*_0$ and the actual output level $Y^*_0$.
+\item In an expansion, is potential output $Y_p$ above or below actual output $Y^*_0$? \hfill \underline{\hspace{1.5in}}
 \item Add a long-run aggregate supply (LRAS) curve to your graph, and label $Y_p$.
 \end{enumerate}
 
@@ -126,7 +127,7 @@ Please graph an economy in an expansionary period using the aggregate supply and
 
 \section{The short-run and the long-run}
 
-\begin{enumerate}[font={\bfseries}]
+\begin{enumerate}
 
 \item What characterizes the short-run in the aggregate supply and demand (AS and AD) model?
 
@@ -148,11 +149,11 @@ The \underline{\hspace{2in}} curve shifts \underline{\hspace{2in}}.
 The \underline{\hspace{2in}} curve shifts \underline{\hspace{2in}}.
 \vspace{1.0\baselineskip}
 
-\item In long-run equilibrium, $Y=Y_p$. Revisit \cref{sec:recession}, with \emph{an economy in recession}. Suppose that wages adjust so that the economy returns to long-run equilibrium. Consider what shift would be necessary to make $Y=Y_p$. Graph this shift, and label the new price level $P_1$ and new actual output level $Y_1$. Did wages increase or decrease?
+\item In long-run equilibrium, $Y=Y_p$. Revisit \cref{sec:recession}, with \emph{an economy in a recessionary period}. Suppose that wages adjust so that the economy returns to long-run equilibrium. Consider what shift would be necessary to make $Y=Y_p$. Graph this shift, and label the new price level $P^*_1$ and new actual output level $Y^*_1$. Did wages increase or decrease?
 
 \vfill
 
-\item In long-run equilibrium, $Y=Y_p$. Revisit \cref{sec:expansion}, with \emph{an economy in expansion}. Suppose that wages adjust so that the economy returns to long-run equilibrium. Consider what shift would be necessary to make $Y=Y_p$. Graph this shift, and label the new price level $P_1$ and new actual output level $Y_1$. Did wages increase or decrease?
+\item In long-run equilibrium, $Y=Y_p$. Revisit \cref{sec:expansion}, with \emph{an economy in an expansionary period}. Suppose that wages adjust so that the economy returns to long-run equilibrium. Consider what shift would be necessary to make $Y=Y_p$. Graph this shift, and label the new price level $P^*_1$ and new actual output level $Y^*_1$. Did wages increase or decrease?
 
 \vfill
 

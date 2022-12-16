@@ -15,6 +15,7 @@
 
 \usepackage{enumitem}
 \usepackage[dvipsnames]{xcolor}
+\usepackage[capitalise,nameinlink]{cleveref}
 \usepackage{booktabs}
 \usepackage{ragged2e}
 \usepackage{dcolumn}
@@ -29,10 +30,12 @@
 
 % Reduce vertical spacing around headings
 \RedeclareSectionCommand[
-  runin=false,
-  beforeskip=0.5\baselineskip
+  runin=false,afterindent=false,
+  beforeskip=0.5\baselineskip,
+  afterskip=0.5\baselineskip
 ]{section}
 \RedeclareSectionCommand[
+  runin=false,afterindent=false,
   beforeskip=0pt
 ]{paragraph}
 % Allow display-mode math to break across pages
@@ -43,11 +46,13 @@
 \newcolumntype{d}[1]{D{.}{.}{#1}}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}p{1in}}
 % Bold enumerate numbering
-\setlist[enumerate,1]{label=\bfseries\arabic*.}
+\setlist[enumerate,1]{label=\bfseries\arabic*.,ref={\arabic*}}
 %\setlist{itemsep=\baselineskip,parsep=0\baselineskip}
 % Sections counted in alphabet and formatted as ``Parts''
 \renewcommand*\thesection{\Alph{section}}
 \renewcommand\sectionformat{Part~\thesection:\enskip}
+\crefname{section}{part}{parts}
+\crefname{enumi}{question}{questions}
 
 \newmdenv[leftline=true,rightline=false,topline=false,bottomline=false,linewidth=2pt]{solution}
 
@@ -74,16 +79,15 @@ Suppose that if market wage rate $w\geq10$, you decide selling coffee is too exp
 
 \begin{solution}
 \begin{center}
-\begin{tikzpicture}[x=2mm,y=10mm,scale=0.27]
+\begin{tikzpicture}[x=2mm,y=10mm,scale=0.3]
 \draw[thin, black!20!white] (0,0) grid (220,22);
+\foreach \i in {0,20,40,...,200}{\draw[thick] (\i,0mm) -- + (0,-4mm) node[below] {\i};}
+\foreach \i in {0,2,4,...,20}{\draw[thick] (0mm,\i) -- + (-4mm,0) node[ left] {\i};}
+\draw[very thick,->] (0,0) -- (0,22) node[left,xshift=-1mm] {$w$};
+\draw[very thick,->] (0,0) -- (220, 0) node[below,xshift=4mm,yshift=-1mm] {$L$ (hours)};
 
 \draw[purple,dashed,thick] (0,10) -- (220,10) node[above left,purple,yshift=24pt]{\contour{white}{do not sell coffee}};
 \draw[purple,dashed,thick] (0,7) -- (220,7) node[above left,purple,yshift=2.5pt]{\contour{white}{super-auto machine}} node[below left,purple,yshift=-24pt]{\contour{white}{brew coffee manually}};
-
-\draw[very thick,->] (0,0) -- (0,22) node[left,xshift=-1mm,yshift=4mm] {$w$};
-\draw[very thick,->] (0,0) -- (220, 0) node[below,xshift=8mm,yshift=-1mm] {$L$ (hours)};
-\foreach \i in {0,20,40,...,200}{\draw[thick] (\i,0mm) -- + (0,-4mm) node[below] {\i};}
-\foreach \i in {0,2,4,...,20}{\draw[thick] (0mm,\i) -- + (-4mm,0) node[ left] {\i};}
 
 \draw[blue,line width=1.2mm,{Circle[length=4mm]}->](0,9.5)--(0,22) node[below right,blue,inner sep=3mm]{\contour{white}{$D_{\text{coffee }L}(w)$}};
 \draw[blue,line width=1.2mm,{Circle[length=4mm]}-{Circle[length=4mm,open]}](10,6.5)--(10,10.5);
@@ -98,16 +102,15 @@ Suppose that if market wage rate $w\geq10$, you decide selling coffee is too exp
 
 \begin{solution}
 \begin{center}
-\begin{tikzpicture}[x=2mm,y=10mm,scale=0.27]
+\begin{tikzpicture}[x=2mm,y=10mm,scale=0.3]
+\draw[thin, black!20!white] (0,0) grid (220,22);
+\foreach \i in {0,20,40,...,200}{\draw[thick] (\i,0mm) -- + (0,-4mm) node[below] {\i};}
+\foreach \i in {0,2,4,...,20}{\draw[thick] (0mm,\i) -- + (-4mm,0) node[ left] {\i};}
+\draw[very thick,->] (0,0) -- (0,22) node[left,xshift=-1mm] {$w$};
+\draw[very thick,->] (0,0) -- (220, 0) node[below,xshift=4mm,yshift=-1mm] {$L$ (hours)};
 
 \draw[purple,dashed,thick] (0,10) -- (220,10) node[above left,purple,yshift=24pt]{\contour{white}{do not sell coffee}};
 \draw[purple,dashed,thick] (0,7) -- (220,7) node[above left,purple,yshift=2.5pt]{\contour{white}{super-auto machine}} node[below left,purple,yshift=-24pt]{\contour{white}{brew coffee manually}};
-
-\draw[thin, black!20!white] (0,0) grid (220,22);
-\draw[very thick,->] (0,0) -- (0,22) node[left,xshift=-1mm,yshift=4mm] {$w$};
-\draw[very thick,->] (0,0) -- (220, 0) node[below,xshift=8mm,yshift=-1mm] {$L$ (hours)};
-\foreach \i in {0,20,40,...,200}{\draw[thick] (\i,0mm) -- + (0,-4mm) node[below] {\i};}
-\foreach \i in {0,2,4,...,20}{\draw[thick] (0mm,\i) -- + (-4mm,0) node[ left] {\i};}
 
 \draw[red,line width=1.2mm,{Circle[length=4mm]}->](60,-0.5)--(60,22) node[below right,red,inner sep=3mm]{\contour{white}{$D_{\text{cashier }L}(w)$}};
 \draw[blue,line width=1.2mm,{Circle[length=4mm]}->](0,9.5)--(0,22) node[below right,blue,inner sep=3mm]{\contour{white}{$D_{\text{coffee }L}(w)$}};
@@ -121,16 +124,15 @@ Suppose that if market wage rate $w\geq10$, you decide selling coffee is too exp
 
 \begin{solution}
 \begin{center}
-\begin{tikzpicture}[x=2mm,y=10mm,scale=0.27]
+\begin{tikzpicture}[x=2mm,y=10mm,scale=0.3]
 \draw[thin, black!20!white] (0,0) grid (220,22);
+\foreach \i in {0,20,40,...,200}{\draw[thick] (\i,0mm) -- + (0,-4mm) node[below] {\i};}
+\foreach \i in {0,2,4,...,20}{\draw[thick] (0mm,\i) -- + (-4mm,0) node[ left] {\i};}
+\draw[very thick,->] (0,0) -- (0,22) node[left,xshift=-1mm] {$w$};
+\draw[very thick,->] (0,0) -- (220, 0) node[below,xshift=4mm,yshift=-1mm] {$L$ (hours)};
 
 \draw[purple,dashed,thick] (0,10) -- (220,10) node[above left,purple,yshift=24pt]{\contour{white}{do not sell coffee}};
 \draw[purple,dashed,thick] (0,7) -- (220,7) node[above left,purple,yshift=2.5pt]{\contour{white}{super-auto machine}} node[below left,purple,yshift=-24pt]{\contour{white}{brew coffee manually}};
-
-\draw[very thick,->] (0,0) -- (0,22) node[left,xshift=-1mm,yshift=4mm] {$w$};
-\draw[very thick,->] (0,0) -- (220, 0) node[below,xshift=8mm,yshift=-1mm] {$L$ (hours)};
-\foreach \i in {0,20,40,...,200}{\draw[thick] (\i,0mm) -- + (0,-4mm) node[below] {\i};}
-\foreach \i in {0,2,4,...,20}{\draw[thick] (0mm,\i) -- + (-4mm,0) node[ left] {\i};}
 
 \draw[red,line width=1.2mm,{Circle[length=4mm]}->](59.5,-0.5)--(59.5,22) node[below right,red,inner sep=3mm]{\contour{white}{$D_{\text{cashier }L}(w)$}};
 
@@ -151,16 +153,15 @@ Suppose that if market wage rate $w\geq10$, you decide selling coffee is too exp
 
 \begin{solution}
 \begin{center}
-\begin{tikzpicture}[x=2mm,y=10mm,scale=0.27]
+\begin{tikzpicture}[x=2mm,y=10mm,scale=0.3]
 \draw[thin, black!20!white] (0,0) grid (220,22);
+\foreach \i in {0,20,40,...,200}{\draw[thick] (\i,0mm) -- + (0,-4mm) node[below] {\i};}
+\foreach \i in {0,2,4,...,20}{\draw[thick] (0mm,\i) -- + (-4mm,0) node[ left] {\i};}
+\draw[very thick,->] (0,0) -- (0,22) node[left,xshift=-1mm] {$w$};
+\draw[very thick,->] (0,0) -- (220, 0) node[below,xshift=4mm,yshift=-1mm] {$L$ (hours)};
 
 \draw[purple,dashed,thick] (0,10) -- (220,10) node[above left,purple,yshift=24pt]{\contour{white}{do not sell coffee}};
 \draw[purple,dashed,thick] (0,7) -- (220,7) node[above left,purple,yshift=2.5pt]{\contour{white}{super-auto machine}} node[below left,purple,yshift=-24pt]{\contour{white}{brew coffee manually}};
-
-\draw[very thick,->] (0,0) -- (0,22) node[left,xshift=-1mm,yshift=4mm] {$w$};
-\draw[very thick,->] (0,0) -- (220, 0) node[below,xshift=8mm,yshift=-1mm] {$L$ (hours)};
-\foreach \i in {0,20,40,...,200}{\draw[thick] (\i,0mm) -- + (0,-4mm) node[below] {\i};}
-\foreach \i in {0,2,4,...,20}{\draw[thick] (0mm,\i) -- + (-4mm,0) node[ left] {\i};}
 
 \draw[red,line width=1.2mm,{Circle[length=4mm]}->](59.5,-0.5)--(59.5,22) node[below right,red,inner sep=3mm]{\contour{white}{$D_{\text{cashier }L}(w)$}};
 
@@ -184,16 +185,15 @@ Suppose that if market wage rate $w\geq10$, you decide selling coffee is too exp
 
 \begin{solution}
 \begin{center}
-\begin{tikzpicture}[x=2mm,y=10mm,scale=0.27]
+\begin{tikzpicture}[x=2mm,y=10mm,scale=0.3]
 \draw[thin, black!20!white] (0,0) grid (220,22);
+\foreach \i in {0,20,40,...,200}{\draw[thick] (\i,0mm) -- + (0,-4mm) node[below] {\i};}
+\foreach \i in {0,2,4,...,20}{\draw[thick] (0mm,\i) -- + (-4mm,0) node[ left] {\i};}
+\draw[very thick,->] (0,0) -- (0,22) node[left,xshift=-1mm] {$w$};
+\draw[very thick,->] (0,0) -- (220, 0) node[below,xshift=4mm,yshift=-1mm] {$L$ (hours)};
 
 \draw[purple,dashed,thick] (0,10) -- (220,10) node[above left,purple,yshift=24pt]{\contour{white}{do not sell coffee}};
 \draw[purple,dashed,thick] (0,7) -- (220,7) node[above left,purple,yshift=2.5pt]{\contour{white}{super-auto machine}} node[below left,purple,yshift=-24pt]{\contour{white}{brew coffee manually}};
-
-\draw[very thick,->] (0,0) -- (0,22) node[left,xshift=-1mm,yshift=4mm] {$w$};
-\draw[very thick,->] (0,0) -- (220, 0) node[below,xshift=8mm,yshift=-1mm] {$L$ (hours)};
-\foreach \i in {0,20,40,...,200}{\draw[thick] (\i,0mm) -- + (0,-4mm) node[below] {\i};}
-\foreach \i in {0,2,4,...,20}{\draw[thick] (0mm,\i) -- + (-4mm,0) node[ left] {\i};}
 
 \draw[red,line width=1.2mm,{Circle[length=4mm]}->](59.5,-0.5)--(59.5,22) node[below right,red,inner sep=3mm]{\contour{white}{$D_{\text{cashier }L}(w)$}};
 
@@ -227,16 +227,15 @@ I hire 140 hours of labor. I sell coffee that is brewed with a super-automatic m
 
 \begin{solution}
 \begin{center}
-\begin{tikzpicture}[x=2mm,y=10mm,scale=0.27]
+\begin{tikzpicture}[x=2mm,y=10mm,scale=0.3]
 \draw[thin, black!20!white] (0,0) grid (220,22);
+\foreach \i in {0,20,40,...,200}{\draw[thick] (\i,0mm) -- + (0,-4mm) node[below] {\i};}
+\foreach \i in {0,2,4,...,20}{\draw[thick] (0mm,\i) -- + (-4mm,0) node[ left] {\i};}
+\draw[very thick,->] (0,0) -- (0,22) node[left,xshift=-1mm] {$w$};
+\draw[very thick,->] (0,0) -- (220, 0) node[below,xshift=4mm,yshift=-1mm] {$L$ (hours)};
 
 \draw[purple,dashed,thick] (0,10) -- (220,10) node[above left,purple,yshift=24pt]{\contour{white}{do not sell coffee}};
 \draw[purple,dashed,thick] (0,7) -- (220,7) node[above left,purple,yshift=2.5pt]{\contour{white}{super-auto machine}} node[below left,purple,yshift=-24pt]{\contour{white}{brew coffee manually}};
-
-\draw[very thick,->] (0,0) -- (0,22) node[left,xshift=-1mm,yshift=4mm] {$w$};
-\draw[very thick,->] (0,0) -- (220, 0) node[below,xshift=8mm,yshift=-1mm] {$L$ (hours)};
-\foreach \i in {0,20,40,...,200}{\draw[thick] (\i,0mm) -- + (0,-4mm) node[below] {\i};}
-\foreach \i in {0,2,4,...,20}{\draw[thick] (0mm,\i) -- + (-4mm,0) node[ left] {\i};}
 
 \draw[red,line width=1.2mm,{Circle[length=4mm]}->](59.5,-0.5)--(59.5,22) node[below right,red,inner sep=3mm]{\contour{white}{$D_{\text{cashier }L}(w)$}};
 
@@ -269,16 +268,15 @@ I hire 200 hours of labor. I sell coffee that is manually brewed.
 
 \begin{solution}
 \begin{center}
-\begin{tikzpicture}[x=2mm,y=10mm,scale=0.27]
+\begin{tikzpicture}[x=2mm,y=10mm,scale=0.3]
 \draw[thin, black!20!white] (0,0) grid (220,22);
+\foreach \i in {0,20,40,...,200}{\draw[thick] (\i,0mm) -- + (0,-4mm) node[below] {\i};}
+\foreach \i in {0,2,4,...,20}{\draw[thick] (0mm,\i) -- + (-4mm,0) node[ left] {\i};}
+\draw[very thick,->] (0,0) -- (0,22) node[left,xshift=-1mm] {$w$};
+\draw[very thick,->] (0,0) -- (220, 0) node[below,xshift=4mm,yshift=-1mm] {$L$ (hours)};
 
 \draw[purple,dashed,thick] (0,10) -- (220,10) node[above left,purple,yshift=24pt]{\contour{white}{do not sell coffee}};
 \draw[purple,dashed,thick] (0,7) -- (220,7) node[above left,purple,yshift=2.5pt]{\contour{white}{super-auto machine}} node[below left,purple,yshift=-24pt]{\contour{white}{brew coffee manually}};
-
-\draw[very thick,->] (0,0) -- (0,22) node[left,xshift=-1mm,yshift=4mm] {$w$};
-\draw[very thick,->] (0,0) -- (220, 0) node[below,xshift=8mm,yshift=-1mm] {$L$ (hours)};
-\foreach \i in {0,20,40,...,200}{\draw[thick] (\i,0mm) -- + (0,-4mm) node[below] {\i};}
-\foreach \i in {0,2,4,...,20}{\draw[thick] (0mm,\i) -- + (-4mm,0) node[ left] {\i};}
 
 \draw[red,line width=1.2mm,{Circle[length=4mm]}->](59.5,-0.5)--(59.5,22) node[below right,red,inner sep=3mm]{\contour{white}{$D_{\text{cashier }L}(w)$}};
 

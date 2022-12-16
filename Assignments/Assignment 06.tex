@@ -15,6 +15,7 @@
 
 \usepackage{enumitem}
 \usepackage[dvipsnames]{xcolor}
+\usepackage[capitalise,nameinlink]{cleveref}
 \usepackage{booktabs}
 \usepackage{ragged2e}
 \usepackage{dcolumn}
@@ -22,10 +23,12 @@
 
 % Reduce vertical spacing around headings
 \RedeclareSectionCommand[
-  runin=false,
-  beforeskip=0.5\baselineskip
+  runin=false,afterindent=false,
+  beforeskip=0.5\baselineskip,
+  afterskip=0.5\baselineskip
 ]{section}
 \RedeclareSectionCommand[
+  runin=false,afterindent=false,
   beforeskip=0pt
 ]{paragraph}
 % Allow display-mode math to break across pages
@@ -36,11 +39,13 @@
 \newcolumntype{d}[1]{D{.}{.}{#1}}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}p{1in}}
 % Bold enumerate numbering
-\setlist[enumerate,1]{label=\bfseries\arabic*.}
+\setlist[enumerate,1]{label=\bfseries\arabic*.,ref={\arabic*}}
 %\setlist{itemsep=\baselineskip,parsep=0\baselineskip}
 % Sections counted in alphabet and formatted as ``Parts''
 \renewcommand*\thesection{\Alph{section}}
 \renewcommand\sectionformat{Part~\thesection:\enskip}
+\crefname{section}{part}{parts}
+\crefname{enumi}{question}{questions}
 
 \begin{document}
 \RaggedRight
@@ -59,7 +64,7 @@ Monday 24 October 2022 \hfill Your full name: \underline{\hspace{3.25in}}
 \section{BLS definitions\label{sec:bls-definitions}}
 
 The Bureau of Labor Statistics (BLS) surveys people aged 16 or older and applies these definitions:
-\begin{itemize}
+\begin{itemize}[nosep]
 \item \emph{Employed}: Those who performed any work (including self-employment or on a family farm).
 \item \emph{Unemployed}: Those who had no employment, were available for employment, and looked for a job in the preceding four weeks.
 \item \emph{Labor force}: The sum of employed and unemployed people.
@@ -78,7 +83,9 @@ For this section, please
 
 \begin{tabular}{ld{3.0}}
 \toprule
-Classification & \multicolumn{1}{l}{People (millions)} \\
+\multicolumn{2}{c}{BLS data for the U.S.~in February 2020} \\
+\midrule
+Classification & \multicolumn{1}{l}{People, millions} \\
 \midrule
 Employed & 158.8 \\ 
 Unemployed & 5.8 \\

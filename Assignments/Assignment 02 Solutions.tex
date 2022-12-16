@@ -15,6 +15,7 @@
 
 \usepackage{enumitem}
 \usepackage[dvipsnames]{xcolor}
+\usepackage[capitalise,nameinlink]{cleveref}
 \usepackage{booktabs}
 \usepackage{ragged2e}
 \usepackage{dcolumn}
@@ -29,10 +30,12 @@
 
 % Reduce vertical spacing around headings
 \RedeclareSectionCommand[
-  runin=false,
-  beforeskip=0.5\baselineskip
+  runin=false,afterindent=false,
+  beforeskip=0.5\baselineskip,
+  afterskip=0.5\baselineskip
 ]{section}
 \RedeclareSectionCommand[
+  runin=false,afterindent=false,
   beforeskip=0pt
 ]{paragraph}
 % Allow display-mode math to break across pages
@@ -43,11 +46,13 @@
 \newcolumntype{d}[1]{D{.}{.}{#1}}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}p{1in}}
 % Bold enumerate numbering
-\setlist[enumerate,1]{label=\bfseries\arabic*.}
+\setlist[enumerate,1]{label=\bfseries\arabic*.,ref={\arabic*}}
 %\setlist{itemsep=\baselineskip,parsep=0\baselineskip}
 % Sections counted in alphabet and formatted as ``Parts''
 \renewcommand*\thesection{\Alph{section}}
 \renewcommand\sectionformat{Part~\thesection:\enskip}
+\crefname{section}{part}{parts}
+\crefname{enumi}{question}{questions}
 
 \newmdenv[leftline=true,rightline=false,topline=false,bottomline=false,linewidth=2pt]{solution}
 
@@ -68,7 +73,7 @@ Your small country produces two goods, kale and dental floss.
 
 When production is efficient, you can produce the following combinations of kale and dental floss:
 
-\begin{tabular}{l>{\raggedleft\arraybackslash}p{0.9in}>{\raggedleft\arraybackslash}p{1.3in}}
+{\footnotesize \begin{tabular}{l>{\raggedleft\arraybackslash}p{0.9in}>{\raggedleft\arraybackslash}p{1.3in}}
 \toprule
 Point & Kale (tons) & Dental floss (km) \\
 \midrule
@@ -78,7 +83,9 @@ $C$ & 400 &   700 \\
 $D$ & 600 &   400 \\
 $E$ & 800 &     0 \\
 \bottomrule
-\end{tabular}
+\end{tabular} }
+
+These points are connected with straight line segments; altogether these comprise the production possibility frontier.
 
 \begin{enumerate}
 
@@ -87,9 +94,8 @@ $E$ & 800 &     0 \\
 \begin{solution}
 \begin{center}
 
-\begin{tikzpicture}[x=4mm, y=4mm, >=latex]
+\begin{tikzpicture}[scale=1, x=4mm, y=4mm, >=latex]
 \begin{axis}[
-  width={0.6\linewidth},
   grid=both,
   grid style={line width=.1pt, draw=black!40!white},
   xmin=0,
@@ -183,6 +189,8 @@ $D'$ &   900 &   400 \\
 $E'$ & 1,200 &     0 \\
 \bottomrule
 \end{tabular}
+
+Once again, these points are connected with straight line segments, comprising the new PPF.
 
 \begin{enumerate}
 

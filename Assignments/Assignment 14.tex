@@ -1,0 +1,195 @@
+\documentclass[
+    letterpaper,paper=portrait,fleqn,
+    DIV=16,fontsize=12pt,twoside=semi,
+    parskip=full-,
+    headings=standardclasses]
+{scrartcl}
+
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+\ohead[Last updated 12 December 2022.]{\pagemark}
+
+\usepackage{mathtools}
+\usepackage[fullfamily,footnotefigures,swash,lf,mathtabular]{MinionPro}
+\usepackage[eqno,enum,lineno]{tabfigures}
+
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[capitalise,nameinlink]{cleveref}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{dcolumn}
+\usepackage{tikz}
+
+% Reduce vertical spacing around headings
+\RedeclareSectionCommand[
+  runin=false,afterindent=false,
+  beforeskip=0.5\baselineskip,
+  afterskip=0.5\baselineskip
+]{section}
+\RedeclareSectionCommand[
+  runin=false,afterindent=false,
+  beforeskip=0pt
+]{paragraph}
+% Allow display-mode math to break across pages
+\allowdisplaybreaks[1]
+% Set RaggedRight paragraph indent
+\setlength{\RaggedRightParindent}{\parindent}
+% Create additional column types
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}p{1in}}
+% Bold enumerate numbering
+\setlist[enumerate,1]{label=\bfseries\arabic*.,ref={\arabic*}}
+%\setlist{itemsep=\baselineskip,parsep=0\baselineskip}
+% Sections counted in alphabet and formatted as ``Parts''
+\renewcommand*\thesection{\Alph{section}}
+\renewcommand\sectionformat{Part~\thesection:\enskip}
+\crefname{section}{part}{parts}
+\crefname{enumi}{question}{questions}
+
+\begin{document}
+\RaggedRight
+\thispagestyle{plain}
+
+ECO 120-04 \\
+Lucas Reddinger \\
+Friday 9 December 2022 \hfill Your full name: \underline{\hspace{3.25in}}
+
+\vspace{0.7\baselineskip}
+\textbf{\LARGE Assignment 14}
+\vspace{0.3\baselineskip}
+
+\emph{Due Friday 16 December at noon via Canvas.}
+
+\section{Currency exchange markets}
+
+Consider the exchange markets between the U.S.~dollar and the euro.
+
+\begin{enumerate}
+
+\item In the euro market, what is the price called and what are its units?
+
+\vfill
+
+\item In the dollar market, what are the units of its price?
+
+\vfill
+
+\item If the price of the euro increases, does the euro appreciate or depreciate?
+
+\vfill
+
+\item If the price of the euro decreases, does the euro appreciate or depreciate?
+
+\vfill
+
+\item If the price of the euro increases, does the dollar appreciate or depreciate?
+
+\vfill
+
+\item If the price of the euro decreases, does the dollar appreciate or depreciate?
+
+\vfill
+
+\end{enumerate}
+
+\vspace{-2.0\baselineskip}
+
+\clearpage
+
+Suppose that France launches a successful new marketing campaign to sell more French wine in the U.S.
+
+\begin{enumerate}[resume]
+
+\item Please use a supply and demand model of the foreign exchange markets to illustrate the impact of this new program on the exchange rate between the dollar and the euro. Please graph both the euro market and the dollar market and clearly show the affect on each market.
+
+\vfill
+
+\item As a result of the marketing campaign, will the dollar appreciate or depreciate relative to the euro?
+
+\vspace{2.0\baselineskip}
+
+\item What impact does this change in the exchange rate have on additional U.S.~exports and imports (excluding the import of French wine)? Please explain your answer.
+
+\vspace{6.0\baselineskip}
+
+\end{enumerate}
+
+\clearpage
+
+\section{Aggregate economics}
+
+\begin{enumerate}
+
+\item What characterizes stagflation? (Hint: it characterizes prices and output.)
+
+\vfill
+
+\end{enumerate}
+
+In 2022 the U.S.~output gap was $-0.41\%$ in Q1, $-1.02\%$ in Q2, and $-0.78\%$ in Q3. A measure of annual inflation was $8.0\%$, $8.6\%$, and $8.3\%$ for Q1, Q2, and Q3 of 2022, respectively.
+
+\begin{enumerate}[resume]
+
+\item Does the U.S.~economy in Q1--Q3 of 2022 exhibit stagflation? Why?
+
+\vfill
+
+\item What exactly is Q1 of 2022?
+
+\vfill
+
+\end{enumerate}
+
+For the following, consider wages, prices, and output.
+
+\begin{enumerate}[resume]
+
+\item How does each variable change as a recessionary economy returns to long-run equilibrium?
+
+\vfill
+
+\item How does each variable change as an expansionary economy returns to long-run equilibrium?
+
+\vfill
+
+\end{enumerate}
+
+\vspace{-2.0\baselineskip}
+
+\clearpage
+
+\section{The U.S.~economy}
+
+Please present a model of the U.S.~economy that relates output to an aggregate price level.
+
+\begin{enumerate}
+
+\item Please graph the economy in long-run equilibrium. Mark all curves with subscript ``0'' as well as output ($Y_0$) and price level ($P_0$). Be sure to also show potential output, $Y_p$, on your graph.
+
+\vfill
+
+\end{enumerate}
+
+Congress suddenly increases defense spending dramatically.
+
+\begin{enumerate}[resume]
+
+\item On your graph above, please draw this shock, labeling new curves with subscript ``1,'' the new output level as $Y_1$, and the new price level as $P_1$.
+
+\item Is $Y_1$ above, below, or equal to potential output? \hfill \underline{\hspace{3in}}
+
+\end{enumerate}
+
+Over the subsequent years, the economy returns to long-run equilibrium.
+
+\begin{enumerate}[resume]
+
+\item Please depict this change on your graph, labeling new curves with subscript ``2,'' the new output level as $Y_2$, and the new price level as $P_2$.
+
+\item Is $Y_2$ above, below, or equal to potential output? \hfill \underline{\hspace{3in}}
+
+\end{enumerate}
+
+
+\end{document}

@@ -15,6 +15,7 @@
 
 \usepackage{enumitem}
 \usepackage[dvipsnames]{xcolor}
+\usepackage[capitalise,nameinlink]{cleveref}
 \usepackage{booktabs}
 \usepackage{ragged2e}
 \usepackage{dcolumn}
@@ -22,10 +23,12 @@
 
 % Reduce vertical spacing around headings
 \RedeclareSectionCommand[
-  runin=false,
-  beforeskip=0.5\baselineskip
+  runin=false,afterindent=false,
+  beforeskip=0.5\baselineskip,
+  afterskip=0.5\baselineskip
 ]{section}
 \RedeclareSectionCommand[
+  runin=false,afterindent=false,
   beforeskip=0pt
 ]{paragraph}
 % Allow display-mode math to break across pages
@@ -36,11 +39,13 @@
 \newcolumntype{d}[1]{D{.}{.}{#1}}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}p{1in}}
 % Bold enumerate numbering
-\setlist[enumerate,1]{label=\bfseries\arabic*.}
+\setlist[enumerate,1]{label=\bfseries\arabic*.,ref={\arabic*}}
 %\setlist{itemsep=\baselineskip,parsep=0\baselineskip}
 % Sections counted in alphabet and formatted as ``Parts''
 \renewcommand*\thesection{\Alph{section}}
 \renewcommand\sectionformat{Part~\thesection:\enskip}
+\crefname{section}{part}{parts}
+\crefname{enumi}{question}{questions}
 
 \begin{document}
 \RaggedRight
@@ -56,7 +61,7 @@ Wednesday 28 September 2022 \hfill Your full name: \underline{\hspace{3.25in}}
 
 We will work on this together today and Friday. If you don't finish during class, please complete the assignment outside of class with other students or individually.
 
-\emph{Due Monday 4 October.} Please submit hardcopy at the beginning of class (11:00 a.m.), or if you prefer, under the door of Wimberly Hall 339C by 10:50 a.m.
+\emph{Due Monday 3 October.} Please submit hardcopy at the beginning of class (11:00 a.m.), or if you prefer, under the door of Wimberly Hall 339C by 10:50 a.m.
 
 \section*{The U.S.~labor market}
 

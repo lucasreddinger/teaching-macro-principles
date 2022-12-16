@@ -1,0 +1,121 @@
+\documentclass[
+    letterpaper,paper=portrait,fleqn,
+    DIV=16,fontsize=12pt,twoside=semi,
+    parskip=full-,
+    headings=standardclasses]
+{scrartcl}
+
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+\ohead{\pagemark}
+
+\usepackage{mathtools}
+\usepackage[fullfamily,footnotefigures,swash,lf,mathtabular]{MinionPro}
+\usepackage[eqno,enum,lineno]{tabfigures}
+\usepackage{pifont}
+
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[capitalise,nameinlink]{cleveref}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{dcolumn}
+\usepackage{tikz}
+
+% Reduce vertical spacing around headings
+\RedeclareSectionCommand[
+  runin=false,afterindent=false,
+  beforeskip=0.5\baselineskip,
+  afterskip=0.5\baselineskip
+]{section}
+\RedeclareSectionCommand[
+  runin=false,afterindent=false,
+  beforeskip=0pt
+]{paragraph}
+% Allow display-mode math to break across pages
+\allowdisplaybreaks[1]
+% Set RaggedRight paragraph indent
+\setlength{\RaggedRightParindent}{\parindent}
+% Create additional column types
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}p{1in}}
+% Bold enumerate numbering
+\setlist[enumerate,1]{label=\bfseries\arabic*.,ref={\arabic*}}
+%\setlist{itemsep=\baselineskip,parsep=0\baselineskip}
+% Sections counted in alphabet and formatted as ``Parts''
+\renewcommand*\thesection{\Alph{section}}
+\renewcommand\sectionformat{Part~\thesection:\enskip}
+\crefname{section}{part}{parts}
+\crefname{enumi}{question}{questions}
+
+\begin{document}
+\RaggedRight
+\thispagestyle{plain}
+
+ECO 120-04 \\
+Lucas Reddinger \\
+Friday 2 December 2022 \hfill Your full name: \underline{\hspace{3.25in}}
+
+\vspace{0.7\baselineskip}
+\textbf{\LARGE Assignment 12: Aggregate supply and demand}
+\vspace{0.3\baselineskip}
+
+\emph{Due Wednesday 7 December.} Please submit hardcopy at the beginning of class (11:00 a.m.), or if you prefer, under the door of Wimberly Hall 339C by 10:50 a.m.
+
+{\centering
+
+\vspace{-0.5\baselineskip}
+\Pisymbol{MinionPro-Extra}{121}
+\vspace{-0.5\baselineskip}
+
+}
+
+Please present a model of the Russian economy that relates output to an aggregate price level.
+
+\begin{enumerate}
+
+\item Please graph the Russian economy in long-run equilibrium. Mark all curves with subscript ``0'' as well as output ($Y_0$) and price level ($P_0$). Be sure to also show potential output on your graph.
+
+\vfill
+
+\item On Tuesday the U.S.~Treasury Secretary Janet Yellen reported that the Russian economy will experience inflation of about 20\% and a 10 to 15\% decline in output.
+
+Suppose that these changes are the result of a short-run shift of \emph{one} curve in your model above. In the space directly below, please write which curve shifts and in which direction.
+
+\vspace{3.0\baselineskip}
+
+\clearpage
+
+\item On your graph above, please draw this shift, labeling new curves with subscript ``1,'' the new output level as $Y_1$, and the new price level as $P_1$.
+
+\item Is $Y_1$ above, below, or equal to potential output?
+
+\vspace{3.0\baselineskip}
+
+\item Please describe the output gap at $Y_1$ using a mathematical statement. (For example, ``the output gap $<100\%$'' or ``the output gap $<0$.'')
+
+\vspace{4.0\baselineskip}
+
+\item Consider possible explanations of why that particular curve with subscript ``1'' might shift in that direction. Give one explanation consistent with current global economic events.
+
+\emph{For example}, if this problem were about the U.S. economy during the pandemic, you might say that aggregate demand increased. A possible explanation of why aggregate demand might increase during the pandemic is that households were given monetary transfers---stimulus payments---which increased aggregate demand.
+
+\vfill
+
+\item Please explain how this economy will return to long-run equilibrium. What specifically changes? What curve shifts as a result?
+
+\vspace{4.0\baselineskip}
+
+\item On your graph above, please draw this shift, labeling new curves with subscript ``2,'' the new output level as $Y_2$, and the new price level as $P_2$.
+
+\item Is $Y_2$ above, below, or equal to potential output?
+
+\vspace{3.0\baselineskip}
+
+\item Please describe the output gap at $Y_2$ using a mathematical statement.
+
+\vspace{2.0\baselineskip}
+
+\end{enumerate}
+
+\end{document}
