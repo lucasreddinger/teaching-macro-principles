@@ -1,71 +1,14 @@
-\documentclass[
-    letterpaper,paper=portrait,fleqn,
-    DIV=16,fontsize=12pt,twoside=semi,
-    parskip=full-,
-    headings=standardclasses]
-{scrartcl}
+\documentclass{assignment}
 
-\usepackage{scrlayer-scrpage}
-\clearpairofpagestyles
-\ohead{\pagemark}
-
-\usepackage{mathtools}
-\usepackage[fullfamily,footnotefigures,swash,lf,mathtabular]{MinionPro}
-\usepackage[eqno,enum,lineno]{tabfigures}
-
-\usepackage{enumitem}
-\usepackage[dvipsnames]{xcolor}
-\usepackage[capitalise,nameinlink]{cleveref}
-\usepackage{booktabs}
-\usepackage{ragged2e}
-\usepackage{dcolumn}
-\usepackage{tikz}
-\usepackage{pgfplots}
-\usepackage[outline]{contour}
-\usepackage{mdframed}
-
-\usetikzlibrary{patterns}
-\usetikzlibrary{arrows,arrows.meta}
-\contourlength{0.15em}
-
-% Reduce vertical spacing around headings
-\RedeclareSectionCommand[
-  runin=false,afterindent=false,
-  beforeskip=0.5\baselineskip,
-  afterskip=0.5\baselineskip
-]{section}
-\RedeclareSectionCommand[
-  runin=false,afterindent=false,
-  beforeskip=0pt
-]{paragraph}
-% Allow display-mode math to break across pages
-\allowdisplaybreaks[1]
-% Set RaggedRight paragraph indent
-\setlength{\RaggedRightParindent}{\parindent}
-% Create additional column types
-\newcolumntype{d}[1]{D{.}{.}{#1}}
-\newcolumntype{R}{>{\raggedleft\arraybackslash}p{1in}}
-% Bold enumerate numbering
-\setlist[enumerate,1]{label=\bfseries\arabic*.,ref={\arabic*}}
-%\setlist{itemsep=\baselineskip,parsep=0\baselineskip}
-% Sections counted in alphabet and formatted as ``Parts''
-\renewcommand*\thesection{\Alph{section}}
-\renewcommand\sectionformat{Part~\thesection:\enskip}
-\crefname{section}{part}{parts}
-\crefname{enumi}{question}{questions}
-
-\newmdenv[leftline=true,rightline=false,topline=false,bottomline=false,linewidth=2pt]{solution}
+\course{ECO 120-04}
+\name{Lucas Reddinger}
+\date{Wednesday 21 September 2022}
+\doctitle{Assignment 1 Solutions}
 
 \begin{document}
 \RaggedRight
-\thispagestyle{plain}
 
-ECO 120-04 \\
-Lucas Reddinger \\
-Wednesday 21 September 2022
-
-\vspace{0.7\baselineskip}
-\textbf{\LARGE Assignment 1 Solutions}
+\beginsolutions{}
 
 \section*{Iowa agriculture}
 

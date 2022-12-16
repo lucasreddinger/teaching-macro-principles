@@ -1,63 +1,14 @@
-\documentclass[
-    letterpaper,paper=portrait,fleqn,
-    DIV=16,fontsize=12pt,twoside=semi,
-    parskip=full-,
-    headings=standardclasses]
-{scrartcl}
+\documentclass{assignment}
 
-\usepackage{scrlayer-scrpage}
-\clearpairofpagestyles
-\ohead{\pagemark}
-
-\usepackage{mathtools}
-\usepackage[fullfamily,footnotefigures,swash,lf,mathtabular]{MinionPro}
-\usepackage[eqno,enum,lineno]{tabfigures}
-
-\usepackage{enumitem}
-\usepackage[dvipsnames]{xcolor}
-\usepackage[capitalise,nameinlink]{cleveref}
-\usepackage{booktabs}
-\usepackage{ragged2e}
-\usepackage{dcolumn}
-\usepackage{tikz}
-
-% Reduce vertical spacing around headings
-\RedeclareSectionCommand[
-  runin=false,afterindent=false,
-  beforeskip=0.5\baselineskip,
-  afterskip=0.5\baselineskip
-]{section}
-\RedeclareSectionCommand[
-  runin=false,afterindent=false,
-  beforeskip=0pt
-]{paragraph}
-% Allow display-mode math to break across pages
-\allowdisplaybreaks[1]
-% Set RaggedRight paragraph indent
-\setlength{\RaggedRightParindent}{\parindent}
-% Create additional column types
-\newcolumntype{d}[1]{D{.}{.}{#1}}
-\newcolumntype{R}{>{\raggedleft\arraybackslash}p{1in}}
-% Bold enumerate numbering
-\setlist[enumerate,1]{label=\bfseries\arabic*.,ref={\arabic*}}
-%\setlist{itemsep=\baselineskip,parsep=0\baselineskip}
-% Sections counted in alphabet and formatted as ``Parts''
-\renewcommand*\thesection{\Alph{section}}
-\renewcommand\sectionformat{Part~\thesection:\enskip}
-\crefname{section}{part}{parts}
-\crefname{enumi}{question}{questions}
+\course{ECO 120-04}
+\name{Lucas Reddinger}
+\date{Wednesday 21 November 2022}
+\doctitle{Assignment 9: Aggregate supply and demand}
 
 \begin{document}
 \RaggedRight
-\thispagestyle{plain}
 
-ECO 120-04 \\
-Lucas Reddinger \\
-Wednesday 21 November 2022 \hfill Your full name: \underline{\hspace{3.25in}}
-
-\vspace{0.7\baselineskip}
-\textbf{\LARGE Assignment 9: Aggregate supply and demand}
-\vspace{0.3\baselineskip}
+\beginassignment{}
 
 \emph{Due Monday 28 November.} Please submit hardcopy at the beginning of class (11:00 a.m.), or if you prefer, under the door of Wimberly Hall 339C by 10:50 a.m.
 
@@ -79,7 +30,7 @@ Wednesday 21 November 2022 \hfill Your full name: \underline{\hspace{3.25in}}
 \vspace{-2\baselineskip}
 \clearpage
 
-\section{An economy during a recessionary period\label{sec:recession}}
+\section{An economy during a recessionary period} \label{sec:recession}
 
 Please graph an economy in a recessionary period using the aggregate supply and demand model.
 
@@ -103,7 +54,7 @@ Please graph an economy in a recessionary period using the aggregate supply and 
 
 \clearpage
 
-\section{An economy during an expansionary period\label{sec:expansion}}
+\section{An economy during an expansionary period}\label{sec:expansion}
 
 Please graph an economy in an expansionary period using the aggregate supply and demand model.
 
