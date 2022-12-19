@@ -1,0 +1,413 @@
+\documentclass{assignment}
+
+\course{ECO 120-04}
+\name{Lucas Reddinger}
+\date{Monday 19 November 2022}
+\doctitle{Assignment 8 Solutions}
+
+\begin{document}
+\RaggedRight
+
+\beginsolutions{}
+
+\section{Aggregate accounting}
+
+Suppose Wisconsin has a two-good economy with the following historical data for 2019 and 2020:
+
+\begin{tabular}{l*5{d{3.0}}}
+\toprule
+& \multicolumn{2}{c}{Wisconsin, 2019} & \multicolumn{2}{c}{Wisconsin, 2020}\\
+\cmidrule(r){2-3} \cmidrule(l){4-5}
+Good & \multicolumn{1}{c}{Price (\$/pound)} & \multicolumn{1}{c}{Output (billion pounds)} & \multicolumn{1}{c}{Price (\$/pound)}  & \multicolumn{1}{c}{Output (billion pounds)} \\
+\midrule
+Cow beverage &  1.50 & 10 & 1.00 & 20 \\
+Soy beverage &  2.00 & 25 & 3.00 & 20 \\
+\bottomrule
+\end{tabular}
+
+\begin{enumerate}
+
+\item What was the nominal GDP of the Wisconsin two-good economy in 2019?
+
+\begin{solution}
+\vspace{-1.0\baselineskip}
+\begin{align*}
+\text{nom.~gdp}_{\text{2019}} &= 
+p^{\text{cow~bev.}}_{\text{2019}} \times y^{\text{cow~bev.}}_{\text{2019}} +
+p^{\text{soy~bev.}}_{\text{2019}} \times y^{\text{soy~bev.}}_{\text{2019}} \\
+ &= \frac{\$1.50}{\text{lb.~cow~bev.}} \times 10 \text{~B~lbs.~cow~bev.} + \frac{\$2.00}{\text{lb.~soy~bev.}} \times 25 \text{~B~lbs.~soy~bev.} = \$65 \text{~B}
+\end{align*}
+\end{solution}
+
+\item What was the nominal GDP of the Wisconsin two-good economy in 2020?
+
+\begin{solution}
+\vspace{-1.0\baselineskip}
+\begin{align*}
+\text{nom.~gdp}_{\text{2020}} &= 
+p^{\text{cow~bev.}}_{\text{2020}} \times y^{\text{cow~bev.}}_{\text{2020}} +
+p^{\text{soy~bev.}}_{\text{2020}} \times y^{\text{soy~bev.}}_{\text{2020}} \\
+ &= \frac{\$1.00}{\text{lb.~cow~bev.}} \times 20 \text{~B~lbs.~cow~bev.} + \frac{\$3.00}{\text{lb.~soy~bev.}} \times 20 \text{~B~lbs.~soy~bev.} = \$80 \text{~B}
+\end{align*}
+\end{solution}
+
+\item What was the percent change in nominal GDP from 2019 to 2020?
+
+\begin{solution}
+\vspace{-1.0\baselineskip}
+\begin{align*}
+\%\,\Delta\, = \text{percent change} &= \frac{ x_\text{final} - x_\text{initial} }{ x_\text{initial} } \\
+\%\,\Delta\,(\text{nom.~gdp}) = \text{\% change in nom.~gdp} &= \frac{\text{nom. gdp}_{\text{2020}} - \text{nom. gdp}_{\text{2019}}}{\text{nom. gdp}_{\text{2019}}} \\
+&= \frac{\$80 \text{~B} - \$65 \text{~B}}{\$65 \text{~B}} = 0.2308 = 0.2308 \times 100\% = 23.08\%
+\end{align*}
+\end{solution}
+
+\item For the following questions, please use 2019 as the base year.
+
+\begin{enumerate}
+
+\item What was the real GDP of the Wisconsin two-good economy in 2019?
+
+
+\begin{solution}
+\emph{Complete answer:} \$65 B.
+
+To find real GDP, we use prices from the base year and output from the year of interest. After all, we're trying to measure of output for the year of interest by controlling for prices.
+\begin{align*}
+\text{real gdp}_{\text{2019}} &= 
+p^{\text{cow~bev.}}_{\textbf{base year}} \times y^{\text{cow~bev.}}_{\text{2019}} +
+p^{\text{soy~bev.}}_{\textbf{base year}} \times y^{\text{soy~bev.}}_{\text{2019}} \\
+ &= 
+p^{\text{cow~bev.}}_{\textbf{2019}} \times y^{\text{cow~bev.}}_{\text{2019}} +
+p^{\text{soy~bev.}}_{\textbf{2019}} \times y^{\text{soy~bev.}}_{\text{2019}} \\
+ &= \frac{\$1.50}{\text{lb.~cow~bev.}} \times 10 \text{~B~lbs.~cow~bev.} + \frac{\$2.00}{\text{lb.~soy~bev.}} \times 25 \text{~B~lbs.~soy~bev.} = \$65 \text{~B}
+\end{align*}
+Real GDP for the base year is always the same as nominal GDP for the base year.
+\end{solution}
+
+\item What was the real GDP of the Wisconsin two-good economy in 2020?
+
+\begin{solution}
+\emph{Complete answer:} \$49.
+\begin{align*}
+\text{real gdp}_{\text{2020}} &= 
+p^{\text{cow~bev.}}_{\textbf{base year}} \times y^{\text{cow~bev.}}_{\text{2020}} +
+p^{\text{soy~bev.}}_{\textbf{base year}} \times y^{\text{soy~bev.}}_{\text{2020}} \\
+ &= 
+p^{\text{cow~bev.}}_{\textbf{2019}} \times y^{\text{cow~bev.}}_{\text{2020}} +
+p^{\text{soy~bev.}}_{\textbf{2019}} \times y^{\text{soy~bev.}}_{\text{2020}} \\
+ &= \frac{\$1.50}{\text{lb.~cow~bev.}} \times 20 \text{~B~lbs.~cow~bev.} + \frac{\$2.00}{\text{lb.~soy~bev.}} \times 20 \text{~B~lbs.~soy~bev.} = \$70 \text{~B}
+\end{align*}
+\end{solution}
+
+\item What was the percent change in real GDP from 2019 to 2020?
+
+\begin{solution}
+\emph{Complete answer:} $-24.61\%$
+\begin{align*}
+\%\,\Delta\,(\text{real gdp}) &= \frac{\text{real gdp}_{\text{2020}} - \text{real gdp}_{\text{2019}}}{\text{real gdp}_{\text{2019}}} \\
+&= \frac{\$70 \text{~B} - \$65 \text{~B}}{\$65 \text{~B}} = 0.0769 = 0.0769 \times 100\% = 7.69\%
+\end{align*}
+\end{solution}
+
+\item Using your calculation of nominal GDP above and your calculation of real GDP (with a 2019 base year), how much of the percentage change in nominal GDP is due to inflation?
+
+\begin{solution}
+\emph{Complete answer:} 15.39\%.
+
+To estimate inflation in this manner, we always subtract $\%\,\Delta\,(\text{real gdp})$ \emph{from} $\%\,\Delta\,(\text{nom.~gdp})$: $$\%\,\Delta\,(\text{nom.~gdp}) - \%\,\Delta\,(\text{real gdp}) = 23.08\% - 7.69\% = 15.39 \text{ p.p.}$$ We use this percentage point difference in these output measures as an estimate of the inflation rate. Here, they suggest an inflation rate of 15.39\%. (In this case, percentage points serve as an estimate of a percentage.)
+\end{solution}
+
+\end{enumerate}
+
+\item For the following questions, please use 2020 as the base year.
+
+\begin{enumerate}
+
+\item What was real GDP of the Wisconsin two-good economy in 2019?
+
+\begin{solution}
+\$85 B.
+\end{solution}
+
+\item What was real GDP of the Wisconsin two-good economy in 2020?
+
+\begin{solution}
+\$80 B.
+\end{solution}
+
+\item What was the percent change in real GDP from 2019 to 2020?
+
+\begin{solution}
+$-5.88 \%$.
+\end{solution}
+
+\item Using your calculation of nominal GDP above and your calculation of real GDP (with a 2020 base year), how much of the percentage change in nominal GDP is due to inflation?
+
+\begin{solution}
+$$\%\,\Delta\,(\text{nom.~gdp}) - \%\,\Delta\,(\text{real gdp}) = 23.08\% - (-5.88 \%) = 28.96 \text{ p.p.}$$
+This suggests an inflation rate of 28.96\%.
+\end{solution}
+
+\end{enumerate}
+
+\item For the following questions, please use 2019 as the base year.
+
+\begin{enumerate}
+
+\item Calculate a consumer price index for 2019.
+
+\begin{solution}
+\emph{Complete answer:} 100.
+
+To find a CPI, we use output from the base year and prices from the year of interest. After all, we're trying to construct an index of prices for the year of interest by controlling for output. Notice that this is the opposite of what we do with real GDP.
+\begin{align*}
+\widetilde{\text{CPI}}_{\text{2019}} &= 
+p^{\text{cow bev.}}_{\text{2019}} \times y^{\text{cow bev.}}_{\textbf{base year}} +
+p^{\text{soy bev.}}_{\text{2019}} \times y^{\text{soy bev.}}_{\textbf{base year}} \\
+ &= 
+p^{\text{cow bev.}}_{\text{2019}} \times y^{\text{cow bev.}}_{\textbf{2019}} +
+p^{\text{soy bev.}}_{\text{2019}} \times y^{\text{soy bev.}}_{\textbf{2019}} \\
+ &= 
+\frac{\$1.50}{\text{lb.~cow bev.}} \times 10 \text{~B~lb.~cow bev.} +
+\frac{\$2.00}{\text{lb.~soy bev.}} \times 25 \text{~B~lb.~soy bev.} \\
+ &= \$15 \text{~B} + \$50 \text{~B} \\
+ &= \$65 \text{~B}
+\end{align*}
+But this is not quite the CPI, because a true CPI is normalized to 100 in the base year. This CPI should then be 100. So we must use a normalization factor of (100 / \$65 B) for \emph{all} of our CPI calculations, including this one. The normalization is \emph{always} $(100 / \text{nom.~gdp}_{\textbf{base year}})$.
+\begin{align*}
+\text{CPI}_{\text{2019}} &= 
+\left( p^{\text{cow bev.}}_{\text{2019}} \times y^{\text{cow bev.}}_{\textbf{base year}} +
+p^{\text{soy bev.}}_{\text{2019}} \times y^{\text{soy bev.}}_{\textbf{base year}} \right) \times \frac{100}{\text{nom.~gdp}_{\textbf{base year}}} \\
+ &= 
+\left( p^{\text{cow bev.}}_{\text{2019}} \times y^{\text{cow bev.}}_{\textbf{2019}} +
+p^{\text{soy bev.}}_{\text{2019}} \times y^{\text{soy bev.}}_{\textbf{2019}} \right) \times \frac{100}{\text{nom.~gdp}_{\textbf{2019}}} \\
+ &= 
+\left( \frac{\$1.50}{\text{lb.~cow bev.}} \times 10 \text{~B~lb.~cow bev.} +
+\frac{\$2.00}{\text{lb.~soy bev.}} \times 25 \text{~B~lb.~soy bev.} \right) \times \frac{100}{\$65 \text{~B}} \\
+ &= \left( \$15 \text{~B} + \$50 \text{~B} \right) \times \frac{100}{\$65 \text{~B}} \\
+ &= 100
+\end{align*}
+The CPI in the base year is always 100.
+\end{solution}
+
+\item Calculate a consumer price index for 2020.
+
+\begin{solution}
+\emph{Complete answer:} 125.81.
+
+We can use the normalization factor we found when we calculated the CPI for the base year. Or we can use $(100 / \text{nom.~gdp}_{\textbf{base year}})$.
+\begin{align*}
+\text{CPI}_{\text{2020}} &= 
+\left( p^{\text{cow bev.}}_{\text{2020}} \times y^{\text{cow bev.}}_{\textbf{base year}} +
+p^{\text{soy bev.}}_{\text{2020}} \times y^{\text{soy bev.}}_{\textbf{base year}} \right) \times \frac{100}{\text{nom.~gdp}_{\textbf{base year}}} \\
+ &= 
+\left( p^{\text{cow bev.}}_{\text{2020}} \times y^{\text{cow bev.}}_{\textbf{2019}} +
+p^{\text{soy bev.}}_{\text{2020}} \times y^{\text{soy bev.}}_{\textbf{2019}} \right) \times \frac{100}{\text{nom.~gdp}_{\textbf{2019}}} \\
+ &= 
+\left( \frac{\$1.00}{\text{lb.~cow bev.}} \times 10 \text{~B~lb.~cow bev.} +
+\frac{\$3.00}{\text{lb.~soy bev.}} \times 25 \text{~B~lb.~soy bev.} \right) \times \frac{100}{\$65 \text{~B}} \\
+ &= \left( \$10 \text{~B} + \$75 \text{~B} \right) \times \frac{100}{\$65 \text{~B}} \\
+ &= 130.77
+\end{align*}
+All CPIs should be unitless.
+\end{solution}
+
+\item Calculate the percentage change in your index from 2019 to 2020.
+
+\begin{solution}
+\emph{Complete answer:} 30.77\%.
+$$\%\,\Delta\,(\text{CPI}) = \frac{\text{CPI}_{\text{2020}} - \text{CPI}_{\text{2019}}}{\text{CPI}_{\text{2019}}} = \frac{130.77 - 100}{100} = \frac{30.77}{100} = 30.77\%.$$
+This nicely illustrates the appeal of normalizing the CPI to 100 in the base year---it facilitates comparison against the base year.
+\end{solution}
+
+\item Please interpret your last result with a sentence.
+
+\begin{solution}
+Using 2019 output as the basket of goods, inflation from 2019 to 2020 was 30.77\%.
+\end{solution}
+
+\end{enumerate}
+
+\item For the following questions, please use 2020 as the base year.
+
+\begin{enumerate}
+
+\item Calculate a consumer price index for 2019.
+
+\begin{solution}
+\emph{Complete answer:} 87.50.
+\begin{align*}
+\text{CPI}_{\text{2019}} &= 
+\left( p^{\text{cow bev.}}_{\text{2019}} \times y^{\text{cow bev.}}_{\textbf{base year}} +
+p^{\text{soy bev.}}_{\text{2019}} \times y^{\text{soy bev.}}_{\textbf{base year}} \right) \times \frac{100}{\text{nom.~gdp}_{\textbf{base year}}} \\
+ &= 
+\left( p^{\text{cow bev.}}_{\text{2019}} \times y^{\text{cow bev.}}_{\textbf{2020}} +
+p^{\text{soy bev.}}_{\text{2019}} \times y^{\text{soy bev.}}_{\textbf{2020}} \right) \times \frac{100}{\text{nom.~gdp}_{\textbf{2020}}} \\
+ &= 
+\left( \frac{\$1.50}{\text{lb.~cow bev.}} \times 20 \text{~B~lb.~cow bev.} +
+\frac{\$2.00}{\text{lb.~soy bev.}} \times 20 \text{~B~lb.~soy bev.} \right) \times \frac{100}{\$80 \text{~B}} \\
+ &= \left( \$30 \text{~B} + \$40 \text{~B} \right) \times \frac{100}{\$80 \text{~B}} \\
+ &= 87.50
+\end{align*}
+\end{solution}
+
+\item Calculate a consumer price index for 2020.
+
+\begin{solution}
+\emph{Complete answer:} 100.
+\begin{align*}
+\text{CPI}_{\text{2019}} &= 
+\left( p^{\text{cow bev.}}_{\text{2020}} \times y^{\text{cow bev.}}_{\textbf{base year}} +
+p^{\text{soy bev.}}_{\text{2020}} \times y^{\text{soy bev.}}_{\textbf{base year}} \right) \times \frac{100}{\text{nom.~gdp}_{\textbf{base year}}} \\
+ &= 
+\left( p^{\text{cow bev.}}_{\text{2020}} \times y^{\text{cow bev.}}_{\textbf{2020}} +
+p^{\text{soy bev.}}_{\text{2020}} \times y^{\text{soy bev.}}_{\textbf{2020}} \right) \times \frac{100}{\text{nom.~gdp}_{\textbf{2020}}} \\
+ &= 
+\left( \text{nom.~gdp}_{\textbf{2020}} \right) \times \frac{100}{\text{nom.~gdp}_{\textbf{2020}}} \\
+ &= 100.
+\end{align*}
+\end{solution}
+
+\item Calculate the percentage change in your index from 2019 to 2020.
+
+\begin{solution}
+\emph{Complete answer:} 14.29\%.
+$$\%\,\Delta\,(\text{CPI}) = \frac{\text{CPI}_{\text{2020}} - \text{CPI}_{\text{2019}}}{\text{CPI}_{\text{2019}}} = \frac{100 - 87.5}{87.5} = 0.1429 = 0.1429 \times 100\% = 14.29\%.$$
+\end{solution}
+
+\item Please interpret your last result with a sentence.
+
+\begin{solution}
+Using 2020 output as the basket of goods, inflation from 2019 to 2020 was 14.29\%.
+\end{solution}
+
+\end{enumerate}
+
+\end{enumerate}
+
+\section{The La Crosse-Onalaska, WI-MN metropolitan statistical area}
+
+Consider these actual labor force data from the Bureau of Labor Statistics:
+
+\begin{tabular}{l*5{d{2.1}}}
+\toprule
+\multicolumn{6}{c}{Labor force data for the La Crosse-Onalaska, WI-MN MSA} \\
+\midrule
+& \multicolumn{5}{c}{Number of persons, in thousands} \\
+\cmidrule{2-6}
+& \multicolumn{1}{c}{Oct.~2021} & \multicolumn{1}{c}{Nov.~2021} & \multicolumn{1}{c}{Dec.~2021} & \multicolumn{1}{c}{Jan.~2022} & \multicolumn{1}{c}{Feb.~2022} \\
+\midrule
+Civilian Labor Force & 78.2 & 78.6 & 78.3 & 77.5 & 78.6 \\
+Employment & 76.6 & 77.1 & 76.8 & 75.4 & 76.5 \\
+Unemployment & 1.6 & 1.5 & 1.4 & 2.1 & 2.2 \\
+\bottomrule
+\end{tabular}
+
+Unfortunately the BLS does not provide data on the labor force participation rate for MSAs. So let's try to estimate one ourselves using national data.
+
+In the US during Nov 2021, the working-age population was 205,225,809; the total population was 332,598,000. The population of the La Crosse MSA was 139,211. Assume that the La Crosse MSA has the same age distribution as the entire US.
+
+\begin{enumerate}
+
+\item Calculate an estimate of the working-age population for the La Crosse MSA. Assume that this population was constant across all the months listed above.
+
+\begin{solution}
+$$139211 \text{~people} \times \frac{205225809\text{~people}}{332598000\text{~people}}=85899\text{~people}$$
+\end{solution}
+
+\item Consider the fall quarter of 2021 (Q4) by comparing Oct.~2021 and Jan.~2022.
+
+\begin{enumerate}
+\item What was the labor participation rate in Oct.~2021?
+
+\begin{solution}
+$$\frac{78.2 \text{~k people}}{85899 \text{~people}} = 91.04\%$$
+\end{solution}
+
+\item What was the unemployment rate in Oct.~2021?
+
+\begin{solution}
+$$\frac{1.6 \text{~k people}}{78.2 \text{~k people}} = 2.05\%$$
+\end{solution}
+
+\item What was the labor participation rate in Jan.~2022?
+
+\begin{solution}
+$$\frac{77.5 \text{~k people}}{85899 \text{~people}} = 90.22\%$$
+\end{solution}
+
+\item What was the unemployment rate in Jan.~2022?
+
+\begin{solution}
+$$\frac{2.1 \text{~k people}}{77.5 \text{~k people}} = 2.71\%$$
+\end{solution}
+
+\item What was the change in labor participation rate during 2021 Q4?
+
+\begin{solution}
+$$90.22\% - 91.04\% = -0.82 \text{~p.p.}$$
+\end{solution}
+
+\item What was the change in the unemployment rate during 2021 Q4?
+
+\begin{solution}
+$$2.71\% - 2.05\% = 0.66 \text{~p.p.}$$
+\end{solution}
+
+\item By how many people did the labor force change over this period? \label{here}
+
+\begin{solution}
+$$-0.82 \text{~p.p.} \times 85899 \text{~people} = -704 \text{~people}$$
+\end{solution}
+
+\item By how many people did unemployment change over this period?
+
+\begin{solution}
+$$2.1 \text{~k people} - 1.6 \text{~k people} = 500 \text{~people}$$
+\end{solution}
+
+\end{enumerate}
+\item Suppose that those people who left the labor force over the course of 2021 Q4 had been unemployed and gave up on their job search. What if they had instead continued their job search? In this part, consider a scenario in which these people kept searching for a job. That is, count the people from \cref{here} as being unemployed (and thus also part of the labor force) in Jan.~2022.
+
+\begin{enumerate}
+\item How many unemployed people would have been counted for Jan.~2022?
+
+\begin{solution}
+$$2.1 \text{~k people} + 704 \text{~people} = 2804 \text{~people}$$
+\end{solution}
+
+\item The labor force in Jan.~2022 would have totaled what value?
+
+\begin{solution}
+$$77.5 \text{~k people} + 704 \text{~people} = 78204 \text{~people}$$
+\end{solution}
+
+\item What would the labor participation rate have been for Jan.~2022?
+
+\begin{solution}
+$$\frac{78204 \text{~people}}{85899 \text{~people}} = 91.04\%$$
+\end{solution}
+
+\item What would the unemployment rate have been for Jan.~2022?
+
+\begin{solution}
+$$\frac{2.1 \text{~k people} + 704 \text{~people}}{78204 \text{~people}} = 3.59\%$$
+\end{solution}
+
+\item What would the change in labor participation rate have been for 2021 Q4?
+
+\begin{solution}
+$$91.04\% - 91.04\% = 0 \text{~p.p.}$$
+\end{solution}
+
+\item What would the change in the unemployment rate have been for 2021 Q4?
+
+\begin{solution}
+$$3.59\% - 2.05\% = 1.54 \text{~p.p.}$$
+\end{solution}
+
+\end{enumerate}
+\end{enumerate}
+
+\end{document}

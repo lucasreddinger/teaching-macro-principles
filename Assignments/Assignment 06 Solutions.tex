@@ -8,7 +8,7 @@
 \begin{document}
 \RaggedRight
 
-\beginsolutions{}
+\beginsolutions{Updated Monday 19 December.}
 
 \section{BLS definitions\label{sec:bls-definitions}}
 
@@ -41,8 +41,6 @@ Unemployed & 5.8 \\
 Working-age population & 259.6 \\
 \bottomrule
 \end{tabular}
-
-\clearpage
 
 \begin{enumerate}
 \item Write the formula for \emph{the labor force participation rate} as a function of \emph{employment}, \emph{unemployment}, and \emph{the working-age population}.
@@ -91,10 +89,9 @@ Working-age population & 259.6 \\
 \vspace{-1.0\baselineskip}
 \begin{align*}
 \text{change} &= x_\text{final} - x_\text{initial} \\
-\text{change in unemp rate} &= \text{unemp rate}_\text{2020-Mar} - \text{unemp rate}_\text{2020-Feb} \\
+\text{change in unemp.~rate} &= \text{unemp.~rate}_\text{2020-Mar} - \text{unemp.~rate}_\text{2020-Feb} \\
 &= 2.93\% - 3.52\% = -0.59 \text{ p.p.}
 \end{align*}
-
 Suppose we mistakenly wrote that the unemployment rate changed by $-0.59\%$; we wrote units of percent instead of percentage points (p.p.). Then $\text{unemp rate}_\text{2020-Mar} = (100\% - 0.59\%) \times \text{unemp rate}_\text{2020-Feb} = (1 - 0.0059) \times 3.52\% = 3.49\%$. This isn't the true value.
 
 Here, a decrease in the unemployment rate of $0.59$ percentage points instead conveys this: the prior rate, $3.52\%$ declined by $0.59$ percentage \emph{points}. Doing this simpler arithmetic, we find that $\text{unemp rate}_\text{2020-Mar} = 3.52\% - 0.59 \text{ p.p.} = 2.93 \%$, which is the true value.
@@ -119,7 +116,7 @@ In this case, however, unemployed people decided to leave the labor force altoge
 \begin{solution}
 \vspace{-1.0\baselineskip}
 \begin{align*}
-\text{unemp rate}_\text{2020-Mar} &= \frac{ 5.8 \text{ M people} }{ 153.8 \text{ M people} + 5.8 \text{ M people} } = 4.10\%
+\text{unemp.~rate}_\text{2020-Mar} &= \frac{ 5.8 \text{ M people} }{ 153.8 \text{ M people} + 5.8 \text{ M people} } = 4.10\%
 \end{align*}
 \end{solution}
 
@@ -128,7 +125,7 @@ In this case, however, unemployed people decided to leave the labor force altoge
 \begin{solution}
 \vspace{-1.0\baselineskip}
 \begin{align*}
-\text{change in unemp rate} = 4.10\% - 3.52\% = 0.57 \text{ p.p.}
+\text{change in unemployment rate} = 4.10\% - 3.52\% = 0.57 \text{ p.p.}
 \end{align*}
 \end{solution}
 
@@ -164,7 +161,10 @@ Year & \multicolumn{2}{c}{Carrots} & \multicolumn{2}{c}{Onions}\\
 \begin{solution}
 \vspace{-1.0\baselineskip}
 \begin{align*}
-\text{nom. gdp}_\text{2019} = \frac{\$2}{\text{ton}} \times 10 \text{ tons} + \frac{\$3}{\text{ton}} \times 15 \text{ tons} = \$65
+\text{nom.~gdp}_{\text{2019}} &= 
+p^{\text{carrots}}_{\text{2019}} \times y^{\text{carrots}}_{\text{2019}} +
+p^{\text{onions}}_{\text{2019}} \times y^{\text{onions}}_{\text{2019}} \\
+ &= \frac{\$2}{\text{ton of carrots}} \times 10 \text{ tons of carrots} + \frac{\$3}{\text{ton of onions}} \times 15 \text{ tons of onions} = \$65
 \end{align*}
 \end{solution}
 
@@ -173,17 +173,20 @@ Year & \multicolumn{2}{c}{Carrots} & \multicolumn{2}{c}{Onions}\\
 \begin{solution}
 \vspace{-1.0\baselineskip}
 \begin{align*}
-\text{nom. gdp}_\text{2020} = \frac{\$3}{\text{ton}} \times 8 \text{ tons} + \frac{\$4}{\text{ton}} \times 11 \text{ tons} = \$68
+\text{nom.~gdp}_{\text{2020}} &= 
+p^{\text{carrots}}_{\text{2020}} \times y^{\text{carrots}}_{\text{2020}} +
+p^{\text{onions}}_{\text{2020}} \times y^{\text{onions}}_{\text{2020}} \\
+ &= \frac{\$3}{\text{ton of carrots}} \times 8 \text{ tons of carrots} + \frac{\$4}{\text{ton of onions}} \times 11 \text{ tons of onions} = \$68
 \end{align*}
 \end{solution}
 
 \item What was the percent change in nominal GDP from 2019 to 2020?
 
 \begin{solution}
-\vspace{-1.0\baselineskip}
 \begin{align*}
-\text{percent change} &= \frac{ x_\text{final} - x_\text{initial} }{ x_\text{initial} } \\
-\text{\% change in nom. gdp} &= \frac{\$68 - \$65}{\$65} = 4.62\%
+\%\,\Delta\, = \text{percent change} &= \frac{ x_\text{final} - x_\text{initial} }{ x_\text{initial} } \\
+\%\,\Delta\,(\text{nom.~gdp}) = \text{\% change in nom.~gdp} &= \frac{\text{nom. gdp}_{\text{2020}} - \text{nom. gdp}_{\text{2019}}}{\text{nom. gdp}_{\text{2019}}} \\
+&= \frac{\$68 - \$65}{\$65} = 0.0462 = 0.0462 \times 100\% = 4.62\%
 \end{align*}
 \end{solution}
 
@@ -191,58 +194,98 @@ Year & \multicolumn{2}{c}{Carrots} & \multicolumn{2}{c}{Onions}\\
 
 \begin{enumerate}
 
-\vspace{-6pt}
 \item What was real GDP in 2019?
 
 \begin{solution}
-$\$65$
+\emph{Complete answer:} \$65.
+
+To find real GDP, we use prices from the base year and output from the year of interest. After all, we're trying to measure of output for the year of interest by controlling for prices.
+\begin{align*}
+\text{real gdp}_{\text{2019}} &= 
+p^{\text{carrots}}_{\textbf{base year}} \times y^{\text{carrots}}_{\text{2019}} +
+p^{\text{onions}}_{\textbf{base year}} \times y^{\text{onions}}_{\text{2019}} \\
+ &= 
+p^{\text{carrots}}_{\textbf{2019}} \times y^{\text{carrots}}_{\text{2019}} +
+p^{\text{onions}}_{\textbf{2019}} \times y^{\text{onions}}_{\text{2019}} \\
+ &= \frac{\$2}{\text{ton of carrots}} \times 10 \text{ tons of carrots} + \frac{\$3}{\text{ton of onions}} \times 15 \text{ tons of onions} = \$65
+\end{align*}
+Real GDP for the base year is always the same as nominal GDP for the base year.
 \end{solution}
 
-\vspace{-6pt}
 \item What was real GDP in 2020?
 
 \begin{solution}
-$\$49$
+\emph{Complete answer:} \$49.
+\begin{align*}
+\text{real gdp}_{\text{2020}} &= 
+p^{\text{carrots}}_{\textbf{base year}} \times y^{\text{carrots}}_{\text{2020}} +
+p^{\text{onions}}_{\textbf{base year}} \times y^{\text{onions}}_{\text{2020}} \\
+ &= 
+p^{\text{carrots}}_{\textbf{2019}} \times y^{\text{carrots}}_{\text{2020}} +
+p^{\text{onions}}_{\textbf{2019}} \times y^{\text{onions}}_{\text{2020}} \\
+ &= \frac{\$2}{\text{ton of carrots}} \times 8 \text{ tons of carrots} + \frac{\$3}{\text{ton of onions}} \times 11 \text{ tons of onions} = \$49
+\end{align*}
 \end{solution}
 
-\vspace{-6pt}
 \item What was the percent change in real GDP from 2019 to 2020?
 
 \begin{solution}
-$-24.61\%$
+\emph{Complete answer:} $-24.61\%$
+\begin{align*}
+\%\,\Delta\,(\text{real gdp}) &= \frac{\text{real gdp}_{\text{2020}} - \text{real gdp}_{\text{2019}}}{\text{real gdp}_{\text{2019}}} \\
+&= \frac{\$49 - \$65}{\$65} = -0.2461 = -0.2461 \times 100\% = -24.61\%
+\end{align*}
 \end{solution}
 
 \end{enumerate}
 
-\vspace{-6pt}
 \item For this question, please use 2020 as the base year.
 
 \begin{enumerate}
 
-\vspace{-6pt}
 \item What was real GDP in 2019?
 
 \begin{solution}
-$\$90$
+\emph{Complete answer:} \$90.
+\begin{align*}
+\text{real gdp}_{\text{2019}} &= 
+p^{\text{carrots}}_{\textbf{base year}} \times y^{\text{carrots}}_{\text{2019}} +
+p^{\text{onions}}_{\textbf{base year}} \times y^{\text{onions}}_{\text{2019}} \\
+ &= 
+p^{\text{carrots}}_{\textbf{2020}} \times y^{\text{carrots}}_{\text{2019}} +
+p^{\text{onions}}_{\textbf{2020}} \times y^{\text{onions}}_{\text{2019}} \\
+ &= \frac{\$3}{\text{ton of carrots}} \times 10 \text{ tons of carrots} + \frac{\$4}{\text{ton of onions}} \times 15 \text{ tons of onions} = \$90
+\end{align*}
 \end{solution}
 
-\vspace{-6pt}
 \item What was real GDP in 2020?
 
 \begin{solution}
-$\$68$
+\emph{Complete answer:} \$68.
+\begin{align*}
+\text{real gdp}_{\text{2020}} &= 
+p^{\text{carrots}}_{\textbf{base year}} \times y^{\text{carrots}}_{\text{2020}} +
+p^{\text{onions}}_{\textbf{base year}} \times y^{\text{onions}}_{\text{2020}} \\
+ &= 
+p^{\text{carrots}}_{\textbf{2020}} \times y^{\text{carrots}}_{\text{2020}} +
+p^{\text{onions}}_{\textbf{2020}} \times y^{\text{onions}}_{\text{2020}} \\
+ &= \frac{\$3}{\text{ton of carrots}} \times 8 \text{ tons of carrots} + \frac{\$4}{\text{ton of onions}} \times 11 \text{ tons of onions} = \$68
+\end{align*}
+Again, real GDP for the base year is always the same as nominal GDP for the base year.
 \end{solution}
 
-\vspace{-6pt}
 \item What was the percent change in real GDP from 2019 to 2020?
 
 \begin{solution}
-$-24.44\%$
+\emph{Complete answer:} $-24.44\%$
+\begin{align*}
+\%\,\Delta\,(\text{real gdp}) &= \frac{\text{real gdp}_{\text{2020}} - \text{real gdp}_{\text{2019}}}{\text{real gdp}_{\text{2019}}} \\
+&= \frac{\$68 - \$90}{\$90} = -0.2444 = -0.2444 \times 100\% = -24.44\%
+\end{align*}
 \end{solution}
 
 \end{enumerate}
 
-\vspace{-6pt}
 \item Why is the percent change in nominal GDP so different than the percent change in real GDP?
 
 \begin{solution}
